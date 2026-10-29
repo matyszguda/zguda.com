@@ -7,3 +7,5 @@
 - kiss-digital.svg: original inline mobile logo from https://kissdigital.com/ (standalone SVG wrapper).
 
 Official website assets match the inline images supplied in chat. Stored locally to avoid runtime dependence on third-party sites. Marks retain their original colors.
+
+- zguda.com.png: original user-supplied logo uploaded to GitHub in commit 31baa2e. Original PNG retained unchanged; surrounding whitespace cropped in CSS and white background blended with the cream page. Used in header and footer across all pages.
