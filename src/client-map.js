@@ -20,26 +20,24 @@ const places = [
  ['Mediolan','Włochy',9.19,45.4642,'europe']
 ];
 const host=document.querySelector('#client-map');
-const list=document.querySelector('#city-list');
-const views={all:'0 0 1000 370',us:'10 130 310 120',europe:'610 45 195 160',gulf:'890 270 70 70'};
 const project=(lon,lat)=>[(lon+130)*5,(70-lat)*7];
-host.innerHTML=`<svg viewBox="${views.all}" role="img" aria-labelledby="map-title map-desc"><title id="map-title">Mapa lokalizacji klientów</title><desc id="map-desc">Stany Zjednoczone, Europa i Abu Dhabi. Wszystkie 18 lokalizacji można wybrać przyciskami pod mapą.</desc><path class="map-land" d="${land}"/>${places.map(([city,country,lon,lat],i)=>{const[x,y]=project(lon,lat);return `<circle class="map-point" data-point="${i}" cx="${x}" cy="${y}" r="3"><title>${city} — ${country}</title></circle>`}).join('')}</svg>`;
-list.innerHTML=places.map(([city],i)=>`<button data-city="${i}" aria-pressed="false">${city}</button>`).join('');
+host.insertAdjacentHTML('afterbegin',`<svg viewBox="0 0 1000 370" role="group" aria-labelledby="map-title map-desc"><title id="map-title">Mapa lokalizacji klientów</title><desc id="map-desc">Wybierz kropkę, aby zobaczyć nazwę miasta. Kropki można wybierać także klawiszem Tab i zatwierdzać klawiszem Enter.</desc><path class="map-land" d="${land}"/>${places.map(([city,,lon,lat],i)=>{const[x,y]=project(lon,lat);return `<circle class="map-point" data-point="${i}" cx="${x}" cy="${y}" r="4" role="button" tabindex="0" aria-label="${city}" aria-pressed="false"/>`}).join('')}</svg>`);
 const svg=host.querySelector('svg');
-function setRegion(region){
- svg.setAttribute('viewBox',views[region]);
- document.querySelectorAll('[data-region]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.region===region)));
- host.querySelectorAll('.map-point').forEach((p,i)=>{const [, , w, h]=views[region].split(' ').map(Number);const scale=Math.min(svg.clientWidth/w,svg.clientHeight/h);p.setAttribute('r',5/Math.max(.1,scale));p.classList.toggle('outside-region',region!=='all'&&places[i][4]!==region);});
+const label=document.querySelector('#map-city-name');
+let selected=null;
+function positionLabel(){
+ if(!selected)return;
+ const point=selected.getBoundingClientRect();
+ const rect=host.getBoundingClientRect();
+ label.style.left=`${Math.max(8,Math.min(rect.width-label.offsetWidth-8,point.x+point.width/2-rect.x-label.offsetWidth/2))}px`;
+ label.style.top=`${Math.max(8,point.y-rect.y-label.offsetHeight-10)}px`;
 }
-function selectCity(i){
- const [city,country,,,region]=places[i];setRegion(region);
- list.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.city)===i)));
- host.querySelectorAll('.map-point').forEach((p,n)=>p.classList.toggle('selected',i===n));
- document.querySelector('#map-selection').textContent=`${city} — ${country}`;
+function selectPoint(point){
+ selected=point;
+ host.querySelectorAll('[data-point]').forEach(p=>{p.classList.toggle('selected',p===point);p.setAttribute('aria-pressed',String(p===point));});
+ label.textContent=places[Number(point.dataset.point)][0];label.hidden=false;positionLabel();
 }
-list.addEventListener('click',e=>{const b=e.target.closest('[data-city]');if(b)selectCity(Number(b.dataset.city));});
-host.addEventListener('click',e=>{if(e.target.matches('[data-point]'))selectCity(Number(e.target.dataset.point));});
-document.querySelectorAll('[data-region]').forEach(b=>b.addEventListener('click',()=>setRegion(b.dataset.region)));
-
-addEventListener('resize',()=>setRegion(document.querySelector('[data-region][aria-pressed="true"]').dataset.region));
-setRegion('all');
+host.addEventListener('click',e=>{if(e.target.matches('[data-point]'))selectPoint(e.target);else{label.hidden=true;selected=null;host.querySelectorAll('[data-point]').forEach(p=>{p.classList.remove('selected');p.setAttribute('aria-pressed','false');});}});
+host.addEventListener('keydown',e=>{if(e.target.matches('[data-point]')&&['Enter',' '].includes(e.key)){e.preventDefault();selectPoint(e.target);}if(e.key==='Escape'){label.hidden=true;}});
+function resizeMap(){const scale=Math.min(svg.clientWidth/1000,svg.clientHeight/370);host.querySelectorAll('[data-point]').forEach(p=>p.setAttribute('r',5/Math.max(.1,scale)));positionLabel();}
+addEventListener('resize',resizeMap);resizeMap();

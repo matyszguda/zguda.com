@@ -33,3 +33,5 @@ desktop.addEventListener('change', scheduleParallax);
 updateParallax();
 
 import './client-map.js';
+
+import './email-contact.js';
