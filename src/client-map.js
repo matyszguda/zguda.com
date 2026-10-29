@@ -17,7 +17,10 @@ const places = [
  ['Tallinn','Estonia',24.7536,59.437,'europe'],
  ['Lublin','Polska',22.5684,51.2465,'europe'],
  ['Monachium','Niemcy',11.582,48.1351,'europe'],
- ['Mediolan','Włochy',9.19,45.4642,'europe']
+ ['Mediolan','Włochy',9.19,45.4642,'europe'],
+ ['Washington DC','USA',-77.0369,38.9072,'us'],
+ ['Calgary','Kanada',-114.0719,51.0447,'us'],
+ ['Dubaj','Zjednoczone Emiraty Arabskie',55.2708,25.2048,'gulf']
 ];
 const host=document.querySelector('#client-map');
 const project=(lon,lat)=>[(lon+130)*5,(70-lat)*7];

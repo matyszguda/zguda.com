@@ -13,24 +13,34 @@ const cards = [...document.querySelectorAll('.venture')];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const desktop = matchMedia('(min-width: 761px)');
 let frame = 0;
-function updateParallax() {
+let activeCard = null;
+function updateCardDepth() {
   frame = 0;
   const enabled = desktop.matches && !reducedMotion.matches;
   const rect = ventures.getBoundingClientRect();
-  const travel = Math.max(0, Math.min(96, (innerHeight * .85 - rect.top) * .28));
+  const phase = activeCard ?? Math.max(0, Math.min(2, (innerHeight * .88 - rect.top) / (innerHeight * .48) ));
+  ventures.classList.toggle('has-depth', enabled);
   cards.forEach((card, i) => {
-    const offset = enabled ? i * travel / 2 : 0;
-    card.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
+    // Each card takes the front plane in turn. Layout/order stays unchanged.
+    const weight = enabled ? Math.exp(-Math.pow((phase - i) * 1.8, 2)) : 0;
+    card.style.setProperty('--card-depth', enabled ? `${(-180 * (1 - weight)).toFixed(1)}px` : '0px');
+    card.style.setProperty('--card-tilt', enabled ? `${((i - 1) * 6 * (1 - weight)).toFixed(2)}deg` : '0deg');
+    card.style.setProperty('--card-shadow', enabled ? (0.025 + weight * .065).toFixed(3) : '0');
+    card.style.zIndex = String(Math.round(weight * 10));
   });
 }
-function scheduleParallax() {
-  if (!frame) frame = requestAnimationFrame(updateParallax);
-}
-addEventListener('scroll', scheduleParallax, { passive: true });
-addEventListener('resize', scheduleParallax);
-reducedMotion.addEventListener('change', scheduleParallax);
-desktop.addEventListener('change', scheduleParallax);
-updateParallax();
+function scheduleCardDepth() { if (!frame) frame = requestAnimationFrame(updateCardDepth); }
+addEventListener('scroll', scheduleCardDepth, { passive: true });
+addEventListener('resize', scheduleCardDepth);
+reducedMotion.addEventListener('change', scheduleCardDepth);
+desktop.addEventListener('change', scheduleCardDepth);
+cards.forEach((card, i) => {
+  card.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { activeCard = i; scheduleCardDepth(); } });
+  card.addEventListener('pointerleave', () => { activeCard = null; scheduleCardDepth(); });
+  card.addEventListener('focusin', () => { activeCard = i; scheduleCardDepth(); });
+  card.addEventListener('focusout', e => { if (!card.contains(e.relatedTarget)) { activeCard = null; scheduleCardDepth(); } });
+});
+updateCardDepth();
 
 import './client-map.js';
 

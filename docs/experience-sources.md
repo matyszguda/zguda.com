@@ -24,3 +24,13 @@ Currency figures removed from the rendered site. Group growth compares actual 20
 - Profit growth = (182,298.80 / 98,960.81 - 1) * 100 = 84.2131%, shown +84%.
 - Peak 60-person team retained as supplied by Mateusz; not assigned to 2020.
 - Mateusz clarified he founded both businesses together with his business partner. Sale to TenderHut in 2022 comes from his account in this conversation.
+
+## Indexed bar charts requested with prospect screenshot
+
+Both series are presented as indices with their own 2017 value = 100%, not as growth rates, margins or revenue shares. Separate axes/panels are used for readability because profit changes much more than revenue. Chart values:
+- Revenue source series: 750836.21, 798876.28, 1075669.96, 1462958.55, 1590026.97.
+- Profit source series: 10176.70, 4933.06, 98960.81, 182298.80, -50848.32.
+- Years: 2017–2021. 2021 remains explicitly marked as the prospect's forecast and styled differently, not silently presented as actual results.
+- Each displayed percentage is source_year / source_2017 * 100, rounded to one decimal.
+
+Added map places per Mateusz: Washington DC, Calgary, Dubai (displayed Dubaj).
