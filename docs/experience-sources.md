@@ -52,3 +52,23 @@ Removed the large TenderHut sale panel; retained the original 2022 sale sentence
 At Mateusz's request, the team chart now ends its headcount bars at 2021. The 2022 headcount bar and row are removed. Existing illustrative 2018–2021 estimates are unchanged and retain their explicit estimate labels.
 
 2012 is represented only as a founding milestone; no headcounts or years 2013–2016 are invented/displayed as data. An axis break indicates the compressed early period. 2022 is a sale milestone, described per Mateusz as sale to the GPW-listed TenderHut group, with no staff count encoded in that marker. The chart description and table distinguish events from headcount measurements.
+
+## Latest revenue chart (user-provided image, supersedes the prospect chart)
+
+The public revenue chart now uses the exact annotated combined totals from the user's new image titled "Łączne obroty firm KISS Digital i KISS Communications (2012–2022)":
+
+| Year | Combined revenue, million PLN |
+| --- | --- |
+| 2012 | 0.05 |
+| 2013 | 0.35 |
+| 2014 | 0.82 |
+| 2015 | 1.45 |
+| 2016 | 2.20 |
+| 2017 | 3.10 |
+| 2018 | 4.00 |
+| 2019 | 4.75 |
+| 2020 | 5.65 |
+| 2021 | 6.58 |
+| 2022 | 8.41 |
+
+The new explicit request to display exactly these values supersedes the earlier percentage-only representation for this chart. Values are in million PLN; 2021 is no longer displayed as the old prospect forecast. The image labels totals exactly, but does not annotate the separate company segments numerically. Therefore the site displays exact combined totals as single bars without inventing component figures. This update does not recalculate the separate, explicitly illustrative team chart or rewrite the historical geographic revenue mix.
