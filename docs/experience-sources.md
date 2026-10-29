@@ -16,3 +16,11 @@ Geography: Natural Earth ne_110m_admin_0_countries.geojson, public domain, retri
 ## Later development, supplied by Mateusz after the prospect
 
 Group turnover subsequently reached PLN 6.7 million (USD 1.71 million equivalent supplied by Mateusz). Peak team size: 60 people. No calendar year was specified; do not assign these to 2020 or the prospect's forecast. Replace dominant historical group figures with this later scale; individual-company figures and revenue mix remain explicitly historical.
+
+## Public presentation revised to growth only
+
+Currency figures removed from the rendered site. Group growth compares actual 2020 with actual 2019 (same chart, page 9), not the 2021 forecast:
+- Revenue growth = (1,462,958.55 / 1,075,669.96 - 1) * 100 = 36.0044%, shown +36%.
+- Profit growth = (182,298.80 / 98,960.81 - 1) * 100 = 84.2131%, shown +84%.
+- Peak 60-person team retained as supplied by Mateusz; not assigned to 2020.
+- Mateusz clarified he founded both businesses together with his business partner. Sale to TenderHut in 2022 comes from his account in this conversation.
