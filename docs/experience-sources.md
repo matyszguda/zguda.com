@@ -46,3 +46,9 @@ headcount_estimate(year) = round(23 + (60 - 23) * (revenue(year) - 750836.21) / 
 Result: 2017 = 23 (supplied), 2018 = 25*, 2019 = 36*, 2020 = 50*, 2021 = 55*, 2022 = 60 (supplied). Asterisk means illustrative estimate. The 2021 revenue input is itself the prospect's forecast. Source values and model documented here for review; page and accessible table mark every intermediate year as estimated. No actual staff figures are inferred from this model.
 
 Removed the large TenderHut sale panel; retained the original 2022 sale sentence in the main narrative. Full Zero Camps and Ciepło stories were retained throughout; venture cards now also include expanded descriptions, open by default, with internal padding restored.
+
+## Symbolic founding and sale markers
+
+At Mateusz's request, the team chart now ends its headcount bars at 2021. The 2022 headcount bar and row are removed. Existing illustrative 2018–2021 estimates are unchanged and retain their explicit estimate labels.
+
+2012 is represented only as a founding milestone; no headcounts or years 2013–2016 are invented/displayed as data. An axis break indicates the compressed early period. 2022 is a sale milestone, described per Mateusz as sale to the GPW-listed TenderHut group, with no staff count encoded in that marker. The chart description and table distinguish events from headcount measurements.
