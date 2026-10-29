@@ -5,7 +5,7 @@ const projects = [
  ['Parlor Social','Społeczność / Mobile / Integracje','Cyfrowe zaplecze nowojorskiego klubu: aplikacje mobilne, panel administracyjny, płatności i CRM. Za identyfikację oraz projekt interfejsu odpowiadało DTE Studio.','parlor-social'],
  ['PAYBACK','Koncepcja / Gry / Zaangażowanie','Punktołap — gra mobilna łącząca zabawę, rywalizację i nagrody w programie lojalnościowym. Projekt na styku marketingu, technologii i pracy kreatywnej.','punktolap']
 ];
-document.querySelector('#projects').innerHTML=projects.map(([name,tags,text,path],i)=>`<details class="project"><summary><span class="project-number">0${i+1}</span><h3>${name}</h3><span class="project-tags">${tags}</span><span class="plus">+</span></summary><div class="project-body"><p>${text}</p><a class="text-link" href="https://kissdigital.com/work/${path}">Opis realizacji w KISS digital ↗</a></div></details>`).join('');
+document.querySelector('#projects').innerHTML=projects.map(([name,tags,text,path],i)=>`<details class="project"><summary><span class="project-number">0${i+1}</span><h3>${name}</h3><span class="project-tags">${tags}</span><span class="plus">+</span></summary><div class="project-body"><p>${text}</p><a class="text-link" href="https://kissdigital.com/work/${path}" target="_blank" rel="noopener noreferrer">Opis realizacji w KISS digital ↗</a></div></details>`).join('');
 
 import './navigation.js';
 const ventures = document.querySelector('.ventures');
@@ -17,9 +17,9 @@ function updateParallax() {
   frame = 0;
   const enabled = desktop.matches && !reducedMotion.matches;
   const rect = ventures.getBoundingClientRect();
-  const progress = Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight + rect.height)));
+  const travel = Math.max(0, Math.min(96, (innerHeight * .85 - rect.top) * .28));
   cards.forEach((card, i) => {
-    const offset = enabled ? (i - 1) * (progress - .5) * 32 : 0;
+    const offset = enabled ? i * travel / 2 : 0;
     card.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
   });
 }
@@ -31,3 +31,5 @@ addEventListener('resize', scheduleParallax);
 reducedMotion.addEventListener('change', scheduleParallax);
 desktop.addEventListener('change', scheduleParallax);
 updateParallax();
+
+import './client-map.js';
