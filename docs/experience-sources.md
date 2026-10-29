@@ -34,3 +34,15 @@ Both series are presented as indices with their own 2017 value = 100%, not as gr
 - Each displayed percentage is source_year / source_2017 * 100, rounded to one decimal.
 
 Added map places per Mateusz: Washington DC, Calgary, Dubai (displayed Dubaj).
+
+## Team chart (replaces profit chart)
+
+Mateusz supplied endpoints: 23 people in 2017 and 60 in 2022, and requested that intermediate growth be proportional to financial development. Interior bars are explicitly illustrative estimates, not recorded annual headcounts.
+
+Model: interpolate between the two headcount endpoints using relative change in known revenue values, with the previously supplied later revenue level (USD 1.71 million equivalent) as the normalization anchor. This does not assert an independently verified 2022 revenue figure.
+
+headcount_estimate(year) = round(23 + (60 - 23) * (revenue(year) - 750836.21) / (1710000 - 750836.21)).
+
+Result: 2017 = 23 (supplied), 2018 = 25*, 2019 = 36*, 2020 = 50*, 2021 = 55*, 2022 = 60 (supplied). Asterisk means illustrative estimate. The 2021 revenue input is itself the prospect's forecast. Source values and model documented here for review; page and accessible table mark every intermediate year as estimated. No actual staff figures are inferred from this model.
+
+Removed the large TenderHut sale panel; retained the original 2022 sale sentence in the main narrative. Full Zero Camps and Ciepło stories were retained throughout; venture cards now also include expanded descriptions, open by default, with internal padding restored.
