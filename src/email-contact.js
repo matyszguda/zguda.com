@@ -7,16 +7,12 @@ const email='matys+web@zguda.com';
 reveal.addEventListener('click',()=>{
  address.textContent=email;
  container.hidden=false;
+ copy.hidden=false;
  reveal.setAttribute('aria-expanded','true');
  reveal.hidden=true;
  address.focus();
 });
-address.addEventListener('click',()=>{
- copy.hidden=false;
- address.setAttribute('aria-expanded','true');
- copy.focus();
-});
-copy.addEventListener('click',async()=>{
+async function copyEmail(){
  status.textContent='';
  try{
   await navigator.clipboard.writeText(email);
@@ -24,4 +20,6 @@ copy.addEventListener('click',async()=>{
  }catch{
   status.textContent='Nie udało się skopiować. Zaznacz adres i skopiuj go ręcznie.';
  }
-});
+}
+address.addEventListener('click',copyEmail);
+copy.addEventListener('click',copyEmail);
