@@ -1,5 +1,5 @@
 # Zero Camps — efekty pomocy
 
-Mateusz podał: 3600 osób uchodźczych, którym fundacja pomogła w latach 2022–2026. Liczbę wyróżniono w karcie fundacji na stronie głównej i dodano do pełnej historii.
+Mateusz potwierdził: 3600 osób uchodźczych, którym fundacja pomogła w latach 2022–2026, oraz ponad 102 000 osobonocy. Osobonoc oznacza jedną noc spędzoną przez jedną osobę. Nie jest to liczba kalendarzowych nocy działalności ani liczba różnych osób.
 
-Liczba osobonocy wymaga doprecyzowania: wiadomość zawiera „ponad 102 osobonoce”. Zapytano, czy chodzi o ponad 102 000 czy dosłownie ponad 102. Do wyjaśnienia nie publikuje się założonej wartości 102 000.
+Na stronie głównej: „3 600” osób i „102 tys.+” noclegów, z wyjaśnieniem „Każda noc jednej osoby liczona osobno”. Te same dane dodano do pełnej historii fundacji. Użyto zrozumiałego określenia „noclegi”, zachowując znaczenie miary.

@@ -1,10 +1,17 @@
 # Weryfikacja przychodów KISS Digital i KISS Communications (Human)
 
-## Zakres i wniosek
+## Zakres i przyjęte rozstrzygnięcie
 
-Każdy słupek na stronie oznacza przychody za JEDEN rok. Suma dotyczy dwóch spółek w tym samym roku, a nie kolejnych lat. Seria opublikowana na stronie pochodzi z wykresu przekazanego przez Mateusza (0,05–8,41 mln PLN za lata 2012–2022).
+Każdy słupek oznacza przychody za JEDEN rok. Suma dotyczy dwóch spółek w tym samym roku, a nie kolejnych lat.
 
-Nie udało się potwierdzić całej tej serii niezależnymi sprawozdaniami. Znaleziono rozbieżności i różne zakresy raportowania. Nie wolno oznaczać obecnej serii jako „zweryfikowana w KRS” ani automatycznie zastępować jej innym wskaźnikiem przychodów. Potrzebne jest uzgodnienie zakresu pierwotnego zestawienia i rachunków zysków i strat obu spółek.
+Po wyjaśnieniu Mateusz polecił stosować wartości z oficjalnego raportu, a dla nieobjętych nim wcześniejszych lat — z przekazanego przez niego wykresu, którego poprawność potwierdził.
+
+Przyjęto następującą hierarchię:
+- 2022: oficjalne sprawozdanie TenderHut (s. 50–51), pełny rok odtworzony z przychodów po przejęciu i kwot przed przejęciem: 3,406 + 0,376 + 2,956 + 1,550 = 8,288 mln PLN. Wszystkie kwoty w raporcie zaokrąglone do tys. PLN. To arytmetyczna suma sprzedaży obu spółek, nie twierdzenie o odrębnym skonsolidowanym sprawozdaniu „grupy KISS”.
+- 2012–2021: zweryfikowany przez właściciela wykres, ponieważ oficjalny raport TenderHut 2022 nie przedstawia rocznych wyników tych dwóch spółek za cały ten wcześniejszy okres.
+- Nie wykorzystano wtórnej serii ogólnych przychodów z agregatora zamiast przychodów ze sprzedaży; zakres tych wskaźników nie jest tożsamy.
+
+Na stronie nie opisuje się źródeł finansowych, zgodnie z życzeniem Mateusza. Nie dodaje się nieprawdziwej deklaracji „dane z KRS” dla całej serii. Poniższe linki i wcześniejsze porównanie pozostają dokumentacją techniczną w repozytorium, nie treścią witryny.
 
 ## Identyfikacja spółek
 
@@ -40,4 +47,4 @@ Raporty MSSF i przychody jednostkowe z publicznego agregatora nie mogą być zam
 
 ## Zmiany na stronie
 
-Doprecyzowano nagłówek, opis osi, opis dostępności, podpis i tabelę jako roczne przychody. Zachowano dotychczasowe kwoty jako dane z zestawienia właścicielskiego, bez twierdzenia o niezależnej weryfikacji. Pytanie o zakres tego zestawienia przekazano Mateuszowi; zmiana kwot wymaga rozstrzygnięcia rozbieżności, a nie wyboru korzystniejszej wartości.
+Nagłówek, podpis, opis dostępności i tabela jednoznacznie wskazują roczne przychody. Kwota 2022 została zmieniona z 8,41 na 8,288 mln PLN zgodnie z wyżej opisanym rozstrzygnięciem. Wcześniejsze lata zachowano z wykresu potwierdzonego przez Mateusza. Usunięto opis źródeł z widocznego podpisu. Noty dotyczące szacunkowego zatrudnienia zachowano — odnoszą się do modelowanych danych, nie bibliografii.
