@@ -23,9 +23,7 @@ Paleta podstawowa: `src/theme.css`. Główna `#f92700`, podstrony i rozwinięte 
 
 Pralka w nagłówku losuje jeden z pięciu stylów: inwersję wszystkich kolorów, fonty szeryfowe i ozdobne, błękit zamiast czerwieni, czerń na bieli lub biel na czerni. Efekty zastępują się i nie powtarzają bezpośrednio po sobie. Przytrzymanie przycisku lub Shift + klik przywraca styl podstawowy. Wybór pozostaje aktywny podczas przechodzenia między podstronami w tej samej karcie (`sessionStorage`). Każde odświeżenie strony przywraca styl podstawowy i usuwa zapamiętany wariant. Obsługa: `src/style-washer.js`.
 
-Mysz steruje światłem reliefu logo w nagłówku i stopce. WebGL przelicza normalne powierzchni, matowe refleksy i miękkie cienie rzucane przez litery. Oryginalny splot i wygaszenie krawędzi są zachowane. Model wysokości jest przybliżeniem odtworzonym z oświetlenia bitmapy, zapisanym w `src/logo-relief.bin`. Można go odtworzyć poleceniem `python scripts/build-logo-relief.py` (narzędzia autorskie: Pillow, NumPy, SciPy; nie są potrzebne do uruchamiania strony). Dane są pobierane dopiero przy pierwszym ruchu myszy. Renderowanie zatrzymuje się po ustaniu ruchu, a logo poza ekranem jest pomijane. Brak WebGL lub utrata kontekstu pozostawia oryginalną bitmapę.
-
-Pomarańczowy laser zastępuje kursor myszy i rozszerza obręcz nad linkami, przyciskami i pozostałymi kontrolkami. Kliknięcie zwęża punkt, klawiatura przywraca zwykły kursor. Efekty myszy są wyłączone na ekranach dotykowych oraz przy ograniczonych animacjach. Obsługa: `src/pointer-light.js`, `src/logo-relief.js`, `src/pointer-light.css`.
+Pomarańczowy laser zastępuje kursor myszy i rozszerza obręcz nad linkami, przyciskami i pozostałymi kontrolkami. Kliknięcie zwęża punkt, klawiatura przywraca zwykły kursor. Efekt kursora jest wyłączony na ekranach dotykowych oraz przy ograniczonych animacjach. Obsługa: `src/pointer-light.js`, `src/pointer-light.css`.
 
 Zdjęcie przy kontakcie: `public/PXL_20231124_165042270.jpg`, oryginalny plik przesłany przez Mateusza. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
 

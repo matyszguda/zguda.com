@@ -12,7 +12,7 @@
  overflow:visible;
  mix-blend-mode:normal;
 }
-.site-wordmark :is(img,.logo-relief){
+.site-wordmark img{
  position:absolute;
  width:105.848%;
  max-width:none;
