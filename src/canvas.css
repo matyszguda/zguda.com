@@ -1,0 +1,6 @@
+/* The bitmap is unchanged. The tile is a sampled, mirrored crop of its blank cloth. */
+:root{--canvas-texture:url('/logos/canvas-tile.png');--canvas-size:320px 320px}
+.wordmark.site-wordmark{width:220px;height:auto;aspect-ratio:2052/450;mix-blend-mode:normal}
+.site-wordmark img{position:absolute;width:105.848%;max-width:none;height:auto;left:-2.924%;top:-33.3333%;display:block}
+footer .wordmark.site-wordmark{width:180px;height:auto}
+@media(max-width:760px){header .wordmark.site-wordmark{width:140px;height:auto}}

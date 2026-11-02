@@ -1,74 +1,132 @@
-/* White space, two context colors and black. No ornamental color blocks. */
+/* Base appearance: red, black and a shared textile surface. */
 :root{
+ --primary:#f92700;
  --paper:#ffffff;
- --surface:#ffffff;
- --ink:#f92700;
- --muted:#f92700;
- --accent:#f92700;
+ --surface:transparent;
+ --ink:var(--primary);
+ --muted:var(--primary);
+ --accent:var(--primary);
+ --interaction:#000000;
  --line:#ffc9bf;
  --tint:#ffe9e5;
- --interaction-blue:#0d6ee7;
+ --chart-ink:#000000;
+ /* Source-derived textile asset configured in canvas.css. */
+ --canvas-texture:linear-gradient(#ffffff,#ffffff);
+ --canvas-size:256px 256px;
 }
 body.is-subpage,
-.venture-details[open],
-.project[open],
-.chart-table[open],
-nav.is-open,
+.venture-details[open],.project[open],.chart-table[open],nav.is-open,
 .email-contact:has(.email-address:not([hidden])){
- --ink:#0d6ee7;
- --muted:#0d6ee7;
- --accent:#0d6ee7;
- --line:#bfd9fc;
- --tint:#e9f2ff;
+ --ink:var(--interaction);
+ --muted:var(--interaction);
+ --accent:var(--interaction);
  color:var(--ink);
 }
-body{background:#ffffff;color:var(--ink)}
-header,.contact,.aside-section,.story-card,.story-card:nth-child(2),
+html{background:var(--paper)}
+body{min-height:100svh;color:var(--ink);background-color:var(--paper)}
+body,header{
+ background-image:var(--canvas-texture);
+ background-size:var(--canvas-size);
+ background-repeat:repeat;
+ background-attachment:fixed;
+}
+header{background-color:var(--paper);gap:18px}
+header nav{margin-left:auto}
+.header-tools{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.contact,.aside-section,.story-card,.story-card:nth-child(2),
 .art.art-steady,.art.art-zero,.art.art-cieplo,.venture,.sale-milestone{
- background:#ffffff;
- color:var(--ink);
+ background:transparent;color:var(--ink);
 }
 .brand-logo,.company-logo img{filter:brightness(0)}
 .wordmark.site-wordmark{mix-blend-mode:multiply}
-.story-card:hover{color:var(--interaction-blue)}
+.story-card:hover,.map-tooltip{color:var(--interaction)}
 a:hover,button:hover{color:var(--accent)}
-a:focus-visible,button:focus-visible,summary:focus-visible{
- outline-color:var(--interaction-blue);
-}
-.menu-toggle[aria-expanded=true]{color:var(--interaction-blue)}
-.ventures.has-depth .venture{
- box-shadow:0 16px 36px rgb(0 0 0 / var(--card-shadow,.03));
-}
-.chart-tick,.chart-value,.chart-year-label{fill:#000000}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--interaction)}
+.menu-toggle[aria-expanded=true]{color:var(--interaction)}
+.chart-tick,.chart-value,.chart-year-label{fill:var(--chart-ink)}
+.team-chart .chart-bar{fill:var(--chart-ink)}
 .chart-zero{stroke:var(--accent);stroke-opacity:.3}
-.is-estimate .chart-bar{stroke:#000000}
+.is-estimate .chart-bar{stroke:var(--chart-ink)}
 .chart-event-label,.chart-event-year{fill:var(--accent)}
 .chart-axis-break path:last-child{stroke:var(--accent)}
-#client-map{background:#ffffff}
-.map-land{fill:var(--tint);stroke:#ffffff}
-.map-point{fill:var(--accent);stroke:#ffffff}
-.map-point.selected{fill:var(--interaction-blue);stroke:var(--interaction-blue)}
-.map-point:focus-visible{stroke:var(--interaction-blue)}
-.map-tooltip{
- color:var(--interaction-blue);
- background:#ffffff;
- box-shadow:0 0 0 1px #bfd9fc;
-}
-.motto-video{width:min(100%,420px);margin:28px 0 36px}
-.motto-video iframe{
- display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;
-}
-.motto-video figcaption{font-size:12px;line-height:1.6;margin-top:10px}
+#client-map{background:transparent}
+.map-land{fill:var(--tint);stroke:var(--paper)}
+.map-point{fill:var(--accent);stroke:var(--paper)}
+.map-point.selected,.map-point:focus-visible{fill:var(--interaction);stroke:var(--interaction)}
+.map-tooltip{background:var(--paper);box-shadow:0 0 0 1px var(--line)}
 .contact-copy{min-width:0}
-.contact.has-photo{
- display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);
- gap:64px;align-items:center;
-}
+.contact.has-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);gap:64px;align-items:center}
 .contact.has-photo h2{font-size:clamp(42px,5vw,76px)}
 .contact-photo{margin:0;max-width:420px;justify-self:end}
 .contact-photo img{display:block;width:100%;height:auto}
+/* Flat Swiss-style editorial grid. */
+.ventures{gap:40px;perspective:none;isolation:auto;align-items:start;padding-top:0}
+.ventures .venture{padding:24px;border:0;border-radius:0;box-shadow:none;transform:none;will-change:auto;transition:transform 160ms ease-out}
+.venture>.meta{margin:0 0 22px;min-height:36px;font-size:12px;line-height:1.5;letter-spacing:.08em}
+.venture .art{height:140px;padding:0;margin-bottom:24px;justify-content:flex-start;align-items:center}
+.venture .brand-logo,.venture .art-steady .brand-logo,.venture .art-cieplo .brand-logo{width:100%;height:auto;max-width:230px;max-height:76px;object-fit:contain;object-position:left center}
+.venture h3{margin-bottom:18px}
+.style-washer{display:grid;place-items:center;width:44px;height:44px;padding:10px;border:0;background:transparent;color:var(--primary);cursor:pointer;flex-shrink:0;user-select:none;touch-action:manipulation}
+.style-washer:hover{color:var(--primary)}
+.washer-drum{transform-origin:12px 14px}
+.style-washer.is-washing .washer-drum{animation:washer-spin 480ms ease-out}
+@keyframes washer-spin{to{transform:rotate(360deg)}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* One selected wash at a time, applied to the entire document. */
+html[data-wash="invert"]{filter:invert(1)}
+html[data-wash="blue"]{--primary:#0d6ee7;--line:#bfd9fc;--tint:#e9f2ff}
+html[data-wash="ornate"] body,
+html[data-wash="ornate"] button,
+html[data-wash="ornate"] summary,
+html[data-wash="ornate"] .quote-author cite,
+html[data-wash="ornate"] .motto-attribution cite,
+html[data-wash="ornate"] .chart-tick,
+html[data-wash="ornate"] .chart-value,
+html[data-wash="ornate"] .chart-year-label,
+html[data-wash="ornate"] .chart-event-label,
+html[data-wash="ornate"] .chart-event-year{
+ font-family:'Libre Baskerville',Georgia,serif!important;
+}
+html[data-wash="ornate"] h1,
+html[data-wash="ornate"] h2,
+html[data-wash="ornate"] h3,
+html[data-wash="ornate"] .aside-section>p,
+html[data-wash="ornate"] .foundation-impact-values strong{
+ font-family:'Cormorant Garamond',Georgia,serif!important;
+ overflow-wrap:anywhere;
+}
+html[data-wash="mono-light"]{--primary:#000000;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed}
+html[data-wash="mono-light"] body,html[data-wash="mono-light"] header{background-blend-mode:luminosity}
+html[data-wash="mono-light"] .contact-photo img,html[data-wash="mono-light"] .site-wordmark img{filter:grayscale(1)}
+html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#000000;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff}
+html[data-wash="mono-dark"] body,html[data-wash="mono-dark"] header{
+ background-image:linear-gradient(#ffffff,#ffffff),var(--canvas-texture);
+ background-blend-mode:difference,luminosity;
+}
+html[data-wash="mono-dark"] .contact-photo img{filter:grayscale(1)}
+html[data-wash="mono-dark"] .brand-logo,html[data-wash="mono-dark"] .company-logo img{filter:brightness(0) invert(1)}
+html[data-wash="mono-dark"] .site-wordmark{mix-blend-mode:normal}
+html[data-wash="mono-dark"] .site-wordmark img{filter:grayscale(1) invert(1)}
+@media(hover:hover) and (pointer:fine){.ventures .venture:hover{transform:translateY(-3px)}}
+@media(min-width:761px){.ventures .venture:focus-within{transform:translateY(-3px)}}
+@media(max-width:1000px) and (min-width:761px){.ventures{gap:24px}.ventures .venture{padding:18px}}
 @media(max-width:760px){
+ header{gap:12px}
+ header .site-wordmark{order:0}
+ header .header-tools{order:1;margin-left:auto;gap:4px}
+ header nav{order:2;margin-left:0}
+ header .wordmark.site-wordmark{width:140px;height:34px}
+ .header-tools .menu-toggle{margin:0;gap:8px;padding:6px 8px;font-size:13px}
  .contact.has-photo{grid-template-columns:minmax(0,1fr);gap:36px}
  .contact-photo{width:100%;max-width:360px;justify-self:start}
  .contact.has-photo h2{font-size:clamp(36px,9vw,68px)}
+ .ventures{gap:32px}
+ .ventures .venture{padding:20px}
+ .venture>.meta{min-height:0;margin-bottom:18px}
+ .venture .art{height:115px;margin-bottom:20px}
+ .venture .brand-logo,.venture .art-steady .brand-logo,.venture .art-cieplo .brand-logo{max-width:220px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ventures .venture,.ventures .venture:hover,.ventures .venture:focus-within{transform:none!important;transition:none!important}
+ .style-washer.is-washing .washer-drum{animation:none}
 }

@@ -8,4 +8,6 @@
 
 Official website assets match the inline images supplied in chat. Stored locally to avoid runtime dependence on third-party sites. Marks retain their original colors.
 
-- zguda.com.png: original user-supplied logo uploaded to GitHub in commit 31baa2e. Original PNG retained unchanged; surrounding whitespace cropped in CSS and white background blended with the cream page. Used in header and footer across all pages.
+- zguda.com.png: previous user-supplied logo uploaded to GitHub in commit 31baa2e. Original PNG retained unchanged.
+- logo-plotno.png: current user-supplied canvas logo uploaded to GitHub in commit eeb00a2. Original 2172 × 724 PNG retained unchanged and used in the header and footer. Blank margins are clipped in CSS.
+- canvas-tile.png: 320 × 320 seamless tile sampled from the blank upper-left cloth of logo-plotno.png. The source crop is (16, 16)–(176, 176), in pixels. Four copies form the tile: original top-left, horizontal reflection top-right, vertical reflection bottom-left and both reflections bottom-right. Opposite edge rows and columns match exactly. Repeats at its native size across the page and header; no generated replacement texture.
