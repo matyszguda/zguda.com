@@ -11,3 +11,4 @@ import './navigation.js';
 import './client-map.js';
 
 import './email-contact.js';
+import './income-chart.js';
