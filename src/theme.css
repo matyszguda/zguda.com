@@ -1,0 +1,74 @@
+/* White space, two context colors and black. No ornamental color blocks. */
+:root{
+ --paper:#ffffff;
+ --surface:#ffffff;
+ --ink:#f92700;
+ --muted:#f92700;
+ --accent:#f92700;
+ --line:#ffc9bf;
+ --tint:#ffe9e5;
+ --interaction-blue:#0d6ee7;
+}
+body.is-subpage,
+.venture-details[open],
+.project[open],
+.chart-table[open],
+nav.is-open,
+.email-contact:has(.email-address:not([hidden])){
+ --ink:#0d6ee7;
+ --muted:#0d6ee7;
+ --accent:#0d6ee7;
+ --line:#bfd9fc;
+ --tint:#e9f2ff;
+ color:var(--ink);
+}
+body{background:#ffffff;color:var(--ink)}
+header,.contact,.aside-section,.story-card,.story-card:nth-child(2),
+.art.art-steady,.art.art-zero,.art.art-cieplo,.venture,.sale-milestone{
+ background:#ffffff;
+ color:var(--ink);
+}
+.brand-logo,.company-logo img{filter:brightness(0)}
+.wordmark.site-wordmark{mix-blend-mode:multiply}
+.story-card:hover{color:var(--interaction-blue)}
+a:hover,button:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+ outline-color:var(--interaction-blue);
+}
+.menu-toggle[aria-expanded=true]{color:var(--interaction-blue)}
+.ventures.has-depth .venture{
+ box-shadow:0 16px 36px rgb(0 0 0 / var(--card-shadow,.03));
+}
+.chart-tick,.chart-value,.chart-year-label{fill:#000000}
+.chart-zero{stroke:var(--accent);stroke-opacity:.3}
+.is-estimate .chart-bar{stroke:#000000}
+.chart-event-label,.chart-event-year{fill:var(--accent)}
+.chart-axis-break path:last-child{stroke:var(--accent)}
+#client-map{background:#ffffff}
+.map-land{fill:var(--tint);stroke:#ffffff}
+.map-point{fill:var(--accent);stroke:#ffffff}
+.map-point.selected{fill:var(--interaction-blue);stroke:var(--interaction-blue)}
+.map-point:focus-visible{stroke:var(--interaction-blue)}
+.map-tooltip{
+ color:var(--interaction-blue);
+ background:#ffffff;
+ box-shadow:0 0 0 1px #bfd9fc;
+}
+.motto-video{width:min(100%,420px);margin:28px 0 36px}
+.motto-video iframe{
+ display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;
+}
+.motto-video figcaption{font-size:12px;line-height:1.6;margin-top:10px}
+.contact-copy{min-width:0}
+.contact.has-photo{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);
+ gap:64px;align-items:center;
+}
+.contact.has-photo h2{font-size:clamp(42px,5vw,76px)}
+.contact-photo{margin:0;max-width:420px;justify-self:end}
+.contact-photo img{display:block;width:100%;height:auto}
+@media(max-width:760px){
+ .contact.has-photo{grid-template-columns:minmax(0,1fr);gap:36px}
+ .contact-photo{width:100%;max-width:360px;justify-self:start}
+ .contact.has-photo h2{font-size:clamp(36px,9vw,68px)}
+}

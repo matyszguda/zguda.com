@@ -17,4 +17,8 @@ Treść strony: `index.html`; projekty i historie: `src/main.js`; wygląd: `src/
 
 Prototyp do przeglądu, nie opublikowana strona. Historie i role na podstawie rozmowy z Mateuszem; opisy projektów na podstawie linkowanych case studies KISS digital. Przed publikacją sprawdzić chronologię i liczby fundacji, aktualność danych finansowych Ciepła, nazewnictwo organizacji i podział wkładu przy projektach. Dodać zatwierdzone fotografie i ewentualnie adres kontaktowy. Kompozycje typograficzne przedsięwzięć są koncepcją, nie oficjalnymi znakami.
 
-Fonty DM Sans i Manrope pobierane z Google Fonts, z lokalnymi fallbackami. Brak analityki, formularzy i osadzonych mediów. Przed publikacją ograniczyć dostęp środowiska do niezbędnych domen; sprawdzić fonts.googleapis.com i fonts.gstatic.com oraz domeny źródeł badawczych. Publikacja środowiska Codex nie wdraża strony na zguda.com.
+Fonty DM Sans i Manrope pobierane z Google Fonts, z lokalnymi fallbackami. Brak analityki i formularzy. Historia motta zawiera niewielki odtwarzacz YouTube (youtube-nocookie.com), bez automatycznego odtwarzania. Przed publikacją ograniczyć dostęp środowiska do niezbędnych domen; sprawdzić fonts.googleapis.com i fonts.gstatic.com oraz domeny źródeł badawczych. Publikacja środowiska Codex nie wdraża strony na zguda.com.
+
+Paleta kontekstowa: `src/theme.css`. Białe tło; główna `#f92700`, podstrony i rozwinięte elementy `#0d6ee7`, czerń jako uzupełnienie. Brandowe logotypy wyświetlane monochromatycznie przez CSS.
+
+Zdjęcie do kontaktu oczekuje na plik `public/kontakt.jpg` lub `public/kontakt.png`. Układ jest przygotowany: klasa `has-photo` na sekcji kontaktu i `figure.contact-photo` obok `div.contact-copy`; obraz zachowuje naturalne proporcje. Nie publikować zastępczej fotografii.
