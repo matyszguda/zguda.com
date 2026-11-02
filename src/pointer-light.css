@@ -1,0 +1,33 @@
+.site-wordmark .logo-relief{pointer-events:none;aspect-ratio:3/1}
+.site-wordmark.has-relief img{opacity:0}
+.wordmark.site-wordmark:hover{opacity:1}
+.laser-cursor{
+ position:fixed;top:0;left:0;width:0;height:0;z-index:2147483647;
+ pointer-events:none;opacity:0;color:#ff4d00;
+}
+.laser-cursor.is-visible{opacity:1}
+.laser-cursor::before,.laser-cursor::after{
+ content:'';position:absolute;left:0;top:0;border-radius:50%;
+ transform:translate(-50%,-50%);pointer-events:none;
+}
+.laser-cursor::before{
+ width:5px;height:5px;background:currentColor;
+ box-shadow:0 0 5px 2px #ff4d0080,0 0 15px 5px #ff4d0026;
+ transition:transform 100ms ease-out;
+}
+.laser-cursor::after{
+ width:15px;height:15px;border:1px solid #ff4d0066;
+ transition:width 140ms ease-out,height 140ms ease-out,border-color 140ms ease-out;
+}
+.laser-cursor.is-interactive::after{width:29px;height:29px;border-color:currentColor}
+.laser-cursor.is-pressed::before{transform:translate(-50%,-50%) scale(.65)}
+.laser-cursor.is-pressed::after{width:19px;height:19px}
+html.has-laser,html.has-laser *{cursor:none!important}
+/* Keep the laser orange even when the whole page is inverted by the washer. */
+html[data-wash="invert"] .laser-cursor{filter:invert(1)}
+@media(prefers-reduced-motion:reduce),(hover:none),(pointer:coarse){
+ .laser-cursor{display:none}
+ html.has-laser,html.has-laser *{cursor:revert!important}
+ .site-wordmark.has-relief img{opacity:1}
+ .site-wordmark .logo-relief{display:none}
+}
