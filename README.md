@@ -21,4 +21,4 @@ Fonty DM Sans i Manrope pobierane z Google Fonts, z lokalnymi fallbackami. Brak 
 
 Paleta kontekstowa: `src/theme.css`. Białe tło; główna `#f92700`, podstrony i rozwinięte elementy `#0d6ee7`, czerń jako uzupełnienie. Brandowe logotypy wyświetlane monochromatycznie przez CSS.
 
-Zdjęcie do kontaktu oczekuje na plik `public/kontakt.jpg` lub `public/kontakt.png`. Układ jest przygotowany: klasa `has-photo` na sekcji kontaktu i `figure.contact-photo` obok `div.contact-copy`; obraz zachowuje naturalne proporcje. Nie publikować zastępczej fotografii.
+Zdjęcie przy kontakcie: `public/PXL_20231124_165042270.jpg`, oryginalny plik przesłany przez Mateusza. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
