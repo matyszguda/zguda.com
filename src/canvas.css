@@ -1,6 +1,30 @@
-/* The bitmap is unchanged. The tile is a sampled, mirrored crop of its blank cloth. */
-:root{--canvas-texture:url('/logos/canvas-tile.png');--canvas-size:320px 320px}
-.wordmark.site-wordmark{width:220px;height:auto;aspect-ratio:2052/450;mix-blend-mode:normal}
-.site-wordmark img{position:absolute;width:105.848%;max-width:none;height:auto;left:-2.924%;top:-33.3333%;display:block}
-footer .wordmark.site-wordmark{width:180px;height:auto}
-@media(max-width:760px){header .wordmark.site-wordmark{width:140px;height:auto}}
+/* The cloth uses the same source-pixel scale as the original logo bitmap. */
+:root{
+ --site-mark-width:220px;
+ --canvas-texture:url('/logos/canvas-tile.png');
+ --canvas-tile-size:calc(var(--site-mark-width) * 320 / 2052);
+ --canvas-size:var(--canvas-tile-size) var(--canvas-tile-size);
+}
+.wordmark.site-wordmark,footer .wordmark.site-wordmark{
+ width:var(--site-mark-width);
+ height:auto;
+ aspect-ratio:2052/450;
+ overflow:visible;
+ mix-blend-mode:normal;
+}
+.site-wordmark img{
+ position:absolute;
+ width:105.848%;
+ max-width:none;
+ height:auto;
+ left:-2.924%;
+ top:-33.3333%;
+ display:block;
+ /* Fade only the outer cloth margins; leave the embossed lettering intact. */
+ mask-image:linear-gradient(to right,transparent,#000 2%,#000 98%,transparent),linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent);
+ mask-composite:intersect;
+}
+@media(max-width:760px){
+ :root{--site-mark-width:140px}
+ header .wordmark.site-wordmark{width:var(--site-mark-width);height:auto}
+}
