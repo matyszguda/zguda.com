@@ -1,9 +1,8 @@
-/* Uniform cloth at the logo's weave scale, without mirrored sample quadrants. */
+/* Pre-filtered soft grain at native CSS size: no subpixel weave downsampling. */
 :root{
  --site-mark-width:220px;
- --canvas-texture:url('/logos/canvas-uniform.webp');
- --canvas-tile-size:calc(var(--site-mark-width) * 1254 / 2052);
- --canvas-size:var(--canvas-tile-size) var(--canvas-tile-size);
+ --canvas-texture:url('/logos/canvas-soft.webp');
+ --canvas-size:128px 128px;
 }
 .wordmark.site-wordmark,footer .wordmark.site-wordmark{
  width:var(--site-mark-width);
