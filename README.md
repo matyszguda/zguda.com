@@ -23,7 +23,7 @@ Paleta podstawowa: `src/theme.css`. Główna `#f92700`, podstrony i rozwinięte 
 
 Pralka w nagłówku losuje jeden z pięciu stylów: inwersję wszystkich kolorów, fonty szeryfowe i ozdobne, błękit zamiast czerwieni, czerń na bieli lub biel na czerni. Efekty zastępują się i nie powtarzają bezpośrednio po sobie. Przytrzymanie przycisku lub Shift + klik przywraca styl podstawowy. Wybór pozostaje aktywny podczas przechodzenia między podstronami w tej samej karcie (`sessionStorage`). Każde odświeżenie strony przywraca styl podstawowy i usuwa zapamiętany wariant. Obsługa: `src/style-washer.js`.
 
-Pomarańczowy laser zastępuje kursor myszy i rozszerza obręcz nad linkami, przyciskami i pozostałymi kontrolkami. Kliknięcie zwęża punkt, klawiatura przywraca zwykły kursor. Efekt kursora jest wyłączony na ekranach dotykowych oraz przy ograniczonych animacjach. Obsługa: `src/pointer-light.js`, `src/pointer-light.css`.
+Laser w kolorze `#FF7F00` zastępuje kursor myszy i rozszerza obręcz nad linkami, przyciskami i pozostałymi kontrolkami. Nad klikalnym elementem emituje drobne iskry z miejsca kontaktu; kliknięcie dodaje krótki rozbłysk odprysków. Cząstki opadają i zanikają, a ich liczba jest ograniczona do 32. Po opuszczeniu elementu emisja ustaje. Kliknięcie zwęża punkt, klawiatura przywraca zwykły kursor. Efekt kursora jest wyłączony na ekranach dotykowych oraz przy ograniczonych animacjach. Obsługa: `src/pointer-light.js`, `src/pointer-light.css`.
 
 Zdjęcie przy kontakcie: `public/PXL_20231124_165042270.jpg`, oryginalny plik przesłany przez Mateusza. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
 
