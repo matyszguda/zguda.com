@@ -37,7 +37,9 @@ if (button) {
     const theme = document.querySelector('meta[name="theme-color"]');
     if (theme) theme.content = ['invert', 'mono-dark'].includes(mode) ? '#000000' : '#ffffff';
   }
-  applyMode(savedMode(), false, false);
+  // A reload starts a fresh play session; internal navigation keeps the selection.
+  const reloaded = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+  applyMode(reloaded ? 'base' : savedMode(), false, reloaded);
   addEventListener('pageshow', () => applyMode(savedMode(), false, false));
   button.addEventListener('click', event => {
     if (performance.now() < ignoreClickUntil) return;

@@ -21,7 +21,7 @@ Fonty DM Sans i Instrument Sans pobierane z Google Fonts, z lokalnymi fallbackam
 
 Paleta podstawowa: `src/theme.css`. Główna `#f92700`, podstrony i rozwinięte elementy czarne. Brandowe logotypy wyświetlane monochromatycznie przez CSS. Tło całej strony tworzy powtarzany kafelek płótna wycięty z `public/logos/logo-plotno.png`; oryginalna bitmapa służy jako logo w nagłówku i stopce. Skala splotu tła odpowiada skali bitmapy logo, również na telefonie. Maska CSS wygasza zewnętrzne marginesy płótna wokół znaku, aby nie powstawała prostokątna krawędź. Szczegóły próbki: `public/logos/SOURCES.md`.
 
-Pralka w nagłówku losuje jeden z pięciu stylów: inwersję wszystkich kolorów, fonty szeryfowe i ozdobne, błękit zamiast czerwieni, czerń na bieli lub biel na czerni. Efekty zastępują się i nie powtarzają bezpośrednio po sobie. Przytrzymanie przycisku lub Shift + klik przywraca styl podstawowy. Wybór pozostaje aktywny podczas przechodzenia między podstronami w tej samej karcie (`sessionStorage`). Obsługa: `src/style-washer.js`.
+Pralka w nagłówku losuje jeden z pięciu stylów: inwersję wszystkich kolorów, fonty szeryfowe i ozdobne, błękit zamiast czerwieni, czerń na bieli lub biel na czerni. Efekty zastępują się i nie powtarzają bezpośrednio po sobie. Przytrzymanie przycisku lub Shift + klik przywraca styl podstawowy. Wybór pozostaje aktywny podczas przechodzenia między podstronami w tej samej karcie (`sessionStorage`). Każde odświeżenie strony przywraca styl podstawowy i usuwa zapamiętany wariant. Obsługa: `src/style-washer.js`.
 
 Zdjęcie przy kontakcie: `public/PXL_20231124_165042270.jpg`, oryginalny plik przesłany przez Mateusza. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
 
