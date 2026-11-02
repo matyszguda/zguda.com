@@ -63,8 +63,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .ventures{gap:40px;perspective:none;isolation:auto;align-items:start;padding-top:0}
 .ventures .venture{padding:24px;border:0;border-radius:0;box-shadow:none;transform:none;will-change:auto;transition:transform 160ms ease-out}
 .venture>.meta{margin:0 0 22px;min-height:36px;font-size:12px;line-height:1.5;letter-spacing:.08em}
-.venture .art{height:140px;padding:0;margin-bottom:24px;justify-content:flex-start;align-items:center}
+.venture .art{height:140px;padding:0;margin-bottom:24px;justify-content:flex-start;align-items:flex-start}
 .venture .brand-logo,.venture .art-steady .brand-logo,.venture .art-cieplo .brand-logo{width:100%;height:auto;max-width:230px;max-height:76px;object-fit:contain;object-position:left center}
+/* Align the visible marks, compensating for their original transparent margins. */
+.venture .art-zero .brand-logo{transform:translateX(-3.466667%)}
+.venture .art-cieplo .brand-logo{transform:translateX(-2.84%)}
 .venture h3{margin-bottom:18px}
 .style-washer{display:grid;place-items:center;width:44px;height:44px;padding:10px;border:0;background:transparent;color:var(--primary);cursor:pointer;flex-shrink:0;user-select:none;touch-action:manipulation}
 .style-washer:hover{color:var(--primary)}

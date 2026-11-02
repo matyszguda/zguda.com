@@ -1,8 +1,8 @@
-/* The cloth uses the same source-pixel scale as the original logo bitmap. */
+/* Uniform cloth at the logo's weave scale, without mirrored sample quadrants. */
 :root{
  --site-mark-width:220px;
- --canvas-texture:url('/logos/canvas-tile.png');
- --canvas-tile-size:calc(var(--site-mark-width) * 320 / 2052);
+ --canvas-texture:url('/logos/canvas-uniform.webp');
+ --canvas-tile-size:calc(var(--site-mark-width) * 1254 / 2052);
  --canvas-size:var(--canvas-tile-size) var(--canvas-tile-size);
 }
 .wordmark.site-wordmark,footer .wordmark.site-wordmark{
