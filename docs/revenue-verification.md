@@ -2,11 +2,26 @@
 
 ## Aktualna decyzja redakcyjna
 
-Przy dodawaniu interaktywnych szczegółów Mateusz wybrał: **„Zastąp serię danymi z oficjalnych sprawozdań”**. Ta decyzja zastępuje poprzednie uzgodnienie, które zachowywało jego orientacyjne kwoty za 2012–2021 i pro forma TenderHut za 2022.
+Po wyborze danych ze sprawozdań do interaktywnych szczegółów Mateusz doprecyzował zakres: **przywrócić lata 2012–2016 z wcześniej przekazanymi łącznymi przychodami**. Aktualny wykres obejmuje **2012–2022**.
 
-Wykres obejmuje teraz **2017–2022**: dostępny wspólny zakres rocznych RZiS obu spółek do roku sprzedaży. Wcześniejsze słupki usunięto, ponieważ nie potwierdzono ich podziału ani wyniku netto. Nie przeliczano kwot USD z prospektu i nie użyto prognozy na 2021 jako wykonania.
+- **2012–2016:** historyczne łączne kwoty z wykresu dostarczonego przez właściciela. Brak potwierdzonego podziału między spółki i wyniku netto; tych szczegółów nie uzupełniamy ani nie szacujemy.
+- **2017–2022:** dane rocznych RZiS obu spółek, z podziałem przychodów i wynikiem netto opisanymi poniżej. Nie przeliczano kwot USD z prospektu i nie użyto prognozy na 2021 jako wykonania.
 
 Na stronie pozostają tylko krótkie objaśnienia wskaźników; bibliografia jest w repozytorium, zgodnie z wcześniejszym życzeniem Mateusza.
+
+## Historyczne przychody 2012–2016
+
+Kwoty przekazane przez Mateusza i obecne we wcześniejszej wersji strony (`git show 55deea8:index.html`, atrybuty `data-mln-pln`). To przychody za poszczególne lata, bez kumulacji między latami. Dostępna jest wyłącznie łączna kwota w mln PLN:
+
+| Rok | Łączne przychody, mln PLN |
+| --- | ---: |
+| 2012 | 0,05 |
+| 2013 | 0,35 |
+| 2014 | 0,82 |
+| 2015 | 1,45 |
+| 2016 | 2,20 |
+
+Nie traktujemy tych historycznych kwot jako danych jednostkowych RZiS z dokładnością do groszy. W tym zakresie nie podajemy przychodów poszczególnych spółek ani zysku/straty.
 
 ## Spółki i źródła
 
@@ -18,12 +33,12 @@ Zapis wykorzystanych wierszy, numerów KRS, adresów i sum kontrolnych pobranych
 
 ## Definicje i kontrola
 
-Wszystkie kwoty dotyczą pełnego roku kalendarzowego, w PLN z groszami, bez przeliczeń walutowych.
+Poniższe definicje i dokładne kwoty dotyczą **2017–2022**: pełnych lat kalendarzowych, w PLN z groszami, bez przeliczeń walutowych. Dla wcześniejszych lat obowiązuje zakres historycznych danych właściciela opisany powyżej.
 
 - **Przychody ze sprzedaży** = RZiS **A.I + A.IV**: sprzedaż produktów oraz towarów i materiałów. Nie jest to całe A („przychody netto ze sprzedaży i zrównane z nimi”), ponieważ A zawiera też zmianę stanu produktów i koszt wytworzenia na własne potrzeby. Nie jest to szersza seria „Przychody” z podsumowania agregatora.
 - **Wynik netto** = RZiS **L** („Zysk / strata netto”, po podatku).
 - **Razem** = arytmetyczna suma danych jednostkowych obu spółek w danym roku. Bez wyłączeń transakcji między spółkami; nie deklarujemy sprawozdania skonsolidowanego grupy KISS.
-- Słupki i ich etykiety są w mln PLN, zaokrąglone do dwóch miejsc. Dymki i tabele zawierają dokładne PLN z groszami. Suma jest obliczana przed zaokrągleniem etykiety.
+- Słupki i ich etykiety są w mln PLN, zaokrąglone do dwóch miejsc. Dla 2017–2022 dymki i tabele zawierają dokładne PLN z groszami, a suma jest obliczana przed zaokrągleniem etykiety. Dla 2012–2016 pozostają łączne kwoty historyczne, bez niedostępnych szczegółów.
 
 | Rok | Digital: sprzedaż PLN | Communications: sprzedaż PLN | Digital: wynik netto PLN | Communications: wynik netto PLN |
 | --- | ---: | ---: | ---: | ---: |
@@ -38,7 +53,7 @@ Przykłady istotnych różnic definicyjnych: Digital 2021 ma A = 4 927 391,96 PL
 
 ## Poprzednia wartość 2022
 
-[Skonsolidowane sprawozdanie TenderHut za 2022, s. 50–51](https://assets-us-01.kc-usercontent.com/b9dc1b00-78e3-009e-2f3e-e73b815cfbf3/e7f83f92-505b-42c9-a201-7005e78f3d4d/TenderHut_SSF_MSSF_2022.pdf) przedstawia kwoty po przejęciu i pro forma przed przejęciem, zaokrąglone do tys. PLN. Poprzedni wykres sumował je do 8,288 mln PLN. Nie mieszamy tego ujęcia MSSF z jednostkowymi RZiS: aktualna, jednolita seria daje **8 315 696,75 PLN sprzedaży i −157 999,11 PLN wyniku netto w 2022**. Różnicy zakresu raportowania nie przypisujemy konkretnej korekcie bez dodatkowego uzgodnienia.
+[Skonsolidowane sprawozdanie TenderHut za 2022, s. 50–51](https://assets-us-01.kc-usercontent.com/b9dc1b00-78e3-009e-2f3e-e73b815cfbf3/e7f83f92-505b-42c9-a201-7005e78f3d4d/TenderHut_SSF_MSSF_2022.pdf) przedstawia kwoty po przejęciu i pro forma przed przejęciem, zaokrąglone do tys. PLN. Poprzedni wykres sumował je do 8,288 mln PLN. Nie mieszamy tego ujęcia MSSF z jednostkowymi RZiS: aktualne dane jednostkowe dają **8 315 696,75 PLN sprzedaży i −157 999,11 PLN wyniku netto w 2022**. Różnicy zakresu raportowania nie przypisujemy konkretnej korekcie bez dodatkowego uzgodnienia.
 
 ## Utrzymanie wykresu
 

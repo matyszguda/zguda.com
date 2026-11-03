@@ -2,6 +2,16 @@
   "retrievedOn": "2026-11-03",
   "sourceType": "Public transcript of statutory income statements; original RDF XML not downloaded.",
   "currency": "PLN",
+  "historicalTotals": {
+    "source": "Owner-provided historical chart, retained in commit 55deea8 (index.html); user requested restoring these totals on 2026-11-03. No company split or net result is available.",
+    "values": [
+      {"year":2012,"revenue":50000},
+      {"year":2013,"revenue":350000},
+      {"year":2014,"revenue":820000},
+      {"year":2015,"revenue":1450000},
+      {"year":2016,"revenue":2200000}
+    ]
+  },
   "metric": "Sales revenue = A_I + A_IV; net result = L. Inventory changes A_II and own work capitalised A_III are excluded from sales.",
   "companies": {
     "digital": {

@@ -1,6 +1,6 @@
 import './income-chart.css';
 import records from './revenue-data.json';
-import { breakdownTable, formatMillions, sumPln } from './revenue-format.js';
+import { annualRevenue, breakdownTable, detailNote, formatMillions, hasBreakdown } from './revenue-format.js';
 
 const figure = document.querySelector('.income-chart');
 if (figure) {
@@ -91,8 +91,8 @@ if (figure) {
     if (!record) return;
     if (active !== trigger) {
       close();
-      const total = sumPln(record.digital.revenue, record.communications.revenue);
-      tooltip.innerHTML = `<div class="income-tooltip-heading"><span>Rok ${record.year}</span><strong>${formatMillions(total)} <small>mln PLN</small></strong></div>${breakdownTable(record)}<p>Wynik netto: zysk / − strata.${record.year === 2022 ? '<br>1 kw. 2022 · Sprzedaż do THG. Dane za cały rok.' : ''}</p>`;
+      const total = annualRevenue(record);
+      tooltip.innerHTML = `<div class="income-tooltip-heading"><span>Rok ${record.year}</span><strong>${formatMillions(total)} <small>mln PLN</small></strong></div>${breakdownTable(record)}<p>${detailNote(record)}${record.year === 2022 ? '<br>1 kw. 2022 · Sprzedaż do THG. Dane za cały rok.' : ''}</p>`;
       active = trigger;
       active.classList.add('is-active');
       active.setAttribute('aria-expanded', 'true');
@@ -120,7 +120,7 @@ if (figure) {
     trigger.setAttribute('aria-controls', tooltip.id);
     trigger.setAttribute('aria-expanded', 'false');
     const record = byYear.get(trigger.dataset.year);
-    trigger.setAttribute('aria-label', `${record.year}: ${formatMillions(sumPln(record.digital.revenue, record.communications.revenue))} mln PLN przychodów. Pokaż podział i wynik netto.`);
+    trigger.setAttribute('aria-label', `${record.year}: ${formatMillions(annualRevenue(record))} mln PLN przychodów. ${hasBreakdown(record) ? 'Pokaż podział i wynik netto.' : 'Pokaż łączny przychód. Podział i wynik netto są dostępne od 2017 roku.'}`);
     if (trigger.tagName.toLowerCase() === 'g') {
       trigger.setAttribute('tabindex', '0');
       trigger.setAttribute('role', 'button');

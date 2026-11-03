@@ -1,4 +1,9 @@
 [
+  {"year":2012,"totalRevenue":50000},
+  {"year":2013,"totalRevenue":350000},
+  {"year":2014,"totalRevenue":820000},
+  {"year":2015,"totalRevenue":1450000},
+  {"year":2016,"totalRevenue":2200000},
   {"year":2017,"digital":{"revenue":1758181.31,"netResult":-8513.04},"communications":{"revenue":1195057.68,"netResult":48540.72}},
   {"year":2018,"digital":{"revenue":2238722.93,"netResult":-7901.12},"communications":{"revenue":903470.49,"netResult":27304.15}},
   {"year":2019,"digital":{"revenue":3432068.45,"netResult":348964.13},"communications":{"revenue":798828.32,"netResult":40275.14}},
