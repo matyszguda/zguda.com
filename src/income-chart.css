@@ -1,4 +1,30 @@
 .income-mobile-chart{display:none}
+.income-interaction-hint{font-size:12px;line-height:1.5;margin:-8px 0 16px}
+.income-interaction-hint[hidden],.income-hint-touch{display:none}
+.income-trigger{cursor:pointer;transition:opacity 160ms ease-out}
+.income-chart.is-highlighting .income-trigger:not(.is-active){opacity:.4}
+.income-trigger:focus-visible{outline:2px solid var(--interaction);outline-offset:3px}
+.income-chart .income-trigger.is-active .chart-value,.income-chart .income-trigger.is-active .chart-year-label{fill:var(--accent)}
+.income-trigger.is-active .chart-bar{stroke:var(--accent);stroke-width:2;paint-order:stroke fill}
+.income-tooltip{position:fixed;z-index:2147483610;box-sizing:border-box;width:380px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto;padding:18px;background:var(--paper);color:var(--interaction);border:1px solid var(--interaction);border-top:3px solid var(--primary);box-shadow:0 8px 28px rgb(0 0 0 / .12);animation:income-appear 140ms ease-out}
+.income-tooltip[hidden]{display:none}
+.income-tooltip-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 14px}
+.income-tooltip-heading>span{font-size:12px}
+.income-tooltip-heading strong{font-size:25px;line-height:1.2;letter-spacing:-.04em}
+.income-tooltip-heading small{font-size:12px;font-weight:400;letter-spacing:0}
+.income-tooltip>p{font-size:11px;line-height:1.6;margin:12px 0 0}
+.income-breakdown{width:100%;border-spacing:0;font-size:12px;line-height:1.5;font-variant-numeric:tabular-nums}
+.income-breakdown th{font-weight:400;text-align:left}
+.income-breakdown th,.income-breakdown td{padding:7px 0;vertical-align:top}
+.income-breakdown td,.income-breakdown thead th:not(:first-child){text-align:right;white-space:nowrap;padding-left:8px}
+.income-breakdown tbody th{max-width:105px;padding-right:6px}
+.income-breakdown thead{font-size:10px;color:var(--interaction)}
+.income-breakdown .income-total>*{font-weight:600;border-top:1px solid var(--line)}
+.income-chart .chart-table .income-breakdown{border-spacing:0}
+.income-data-year{margin:24px 0}
+.income-data-year h4{font-size:16px;margin:0 0 8px}
+.income-table-note{font-size:12px;line-height:1.7;margin:12px 0}
+@keyframes income-appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 .chart-sale-marker{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:8px 0 16px;color:var(--accent);font-size:13px;line-height:1.5}
 .chart-sale-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
 @media(max-width:1422px){
@@ -9,10 +35,16 @@
  .income-chart.has-mobile-chart .chart-scroll,
  .income-chart.has-mobile-chart .chart-scroll-hint{display:none}
  .income-chart.has-mobile-chart .income-mobile-chart{display:grid;gap:6px;list-style:none;padding:0;margin:0 0 16px}
- .income-mobile-chart li{display:grid;grid-template-columns:36px minmax(0,1fr) 48px;gap:12px;align-items:center;min-height:24px;font-size:13px;line-height:1.4;color:var(--chart-ink);font-variant-numeric:tabular-nums}
+ .income-mobile-row{display:grid;width:100%;grid-template-columns:36px minmax(0,1fr) 48px;gap:12px;align-items:center;min-height:44px;padding:4px 0;border:0;background:transparent;font:inherit;font-size:13px;line-height:1.4;text-align:left;color:var(--chart-ink);font-variant-numeric:tabular-nums}
  .income-mobile-track{min-width:0}
  .income-mobile-bar{display:block;height:12px;min-width:1px;border-radius:1px;background:var(--accent)}
  .income-mobile-value{text-align:right}
  .income-mobile-chart li[data-year="2022"]{font-weight:700}
  .income-chart .chart-sale-marker{justify-content:flex-start}
+ .income-hint-desktop{display:none}
+ .income-hint-touch{display:inline}
+ .income-tooltip{padding:14px}
 }
+@media(hover:none){.income-hint-desktop{display:none}.income-hint-touch{display:inline}}
+@media(max-width:380px){.income-tooltip{padding:12px}.income-breakdown{font-size:11px}.income-breakdown td,.income-breakdown thead th:not(:first-child){padding-left:5px}}
+@media(prefers-reduced-motion:reduce){.income-trigger{transition:none}.income-tooltip{animation:none}}

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build --base=./",
+    "charts:generate": "node scripts/update-revenue-chart.mjs",
+    "charts:check": "node scripts/update-revenue-chart.mjs --check",
+    "build": "npm run charts:check && vite build --base=./",
     "preview": "vite preview --host 0.0.0.0"
   },
   "devDependencies": {

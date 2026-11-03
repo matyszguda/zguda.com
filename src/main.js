@@ -12,3 +12,4 @@ import './client-map.js';
 
 import './email-contact.js';
 import './income-chart.js';
+import './team-chart.js';

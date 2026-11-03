@@ -1,0 +1,166 @@
+{
+  "retrievedOn": "2026-11-03",
+  "sourceType": "Public transcript of statutory income statements; original RDF XML not downloaded.",
+  "currency": "PLN",
+  "metric": "Sales revenue = A_I + A_IV; net result = L. Inventory changes A_II and own work capitalised A_III are excluded from sales.",
+  "companies": {
+    "digital": {
+      "krs": "0000435987",
+      "url": "https://www.bizraport.pl/krs/0000435987",
+      "htmlSha256": "dd8ed12f9f7ccd979c461fc45cbd68ca2d57485e8760f177b019360497dac8a9",
+      "periods": [
+        {
+          "period": "p17",
+          "year": 2017,
+          "rzis": {
+            "A": 1758181.31,
+            "A_I": 1757879.69,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 301.62,
+            "L": -8513.04
+          }
+        },
+        {
+          "period": "p18",
+          "year": 2018,
+          "rzis": {
+            "A": 2238722.93,
+            "A_I": 2238722.93,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": -7901.12
+          }
+        },
+        {
+          "period": "p19",
+          "year": 2019,
+          "rzis": {
+            "A": 3432068.45,
+            "A_I": 3432068.45,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 348964.13
+          }
+        },
+        {
+          "period": "p20",
+          "year": 2020,
+          "rzis": {
+            "A": 4315509.3,
+            "A_I": 4315509.3,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 365961.39
+          }
+        },
+        {
+          "period": "p21",
+          "year": 2021,
+          "rzis": {
+            "A": 4927391.96,
+            "A_I": 5142453.96,
+            "A_II": -215062,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": -22680.47
+          }
+        },
+        {
+          "period": "p22",
+          "year": 2022,
+          "rzis": {
+            "A": 4535714.46,
+            "A_I": 4507051.37,
+            "A_II": 28663.09,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 21989.9
+          }
+        }
+      ]
+    },
+    "human": {
+      "krs": "0000617465",
+      "url": "https://www.bizraport.pl/krs/0000617465",
+      "htmlSha256": "4e0c85c5fa3c9d53964493df4999316fd6fe397570448a19d9c5de477135a1f1",
+      "periods": [
+        {
+          "period": "p17",
+          "year": 2017,
+          "rzis": {
+            "A": 1195057.68,
+            "A_I": 1195057.68,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 48540.72
+          }
+        },
+        {
+          "period": "p18",
+          "year": 2018,
+          "rzis": {
+            "A": 903470.49,
+            "A_I": 903470.49,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 27304.15
+          }
+        },
+        {
+          "period": "p19",
+          "year": 2019,
+          "rzis": {
+            "A": 798828.32,
+            "A_I": 798828.32,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 40275.14
+          }
+        },
+        {
+          "period": "p20",
+          "year": 2020,
+          "rzis": {
+            "A": 1438696.72,
+            "A_I": 1438696.72,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": 351068.4
+          }
+        },
+        {
+          "period": "p21",
+          "year": 2021,
+          "rzis": {
+            "A": 1375072.6,
+            "A_I": 1375072.6,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 0,
+            "L": -269233.4
+          }
+        },
+        {
+          "period": "p22",
+          "year": 2022,
+          "rzis": {
+            "A": 3808645.38,
+            "A_I": 3775018.55,
+            "A_II": 0,
+            "A_III": 0,
+            "A_IV": 33626.83,
+            "L": -179989.01
+          }
+        }
+      ]
+    }
+  }
+}

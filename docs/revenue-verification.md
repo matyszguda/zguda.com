@@ -1,50 +1,47 @@
-# Weryfikacja przychodów KISS Digital i KISS Communications (Human)
+# Przychody i wyniki KISS Digital / KISS Communications
 
-## Zakres i przyjęte rozstrzygnięcie
+## Aktualna decyzja redakcyjna
 
-Każdy słupek oznacza przychody za JEDEN rok. Suma dotyczy dwóch spółek w tym samym roku, a nie kolejnych lat.
+Przy dodawaniu interaktywnych szczegółów Mateusz wybrał: **„Zastąp serię danymi z oficjalnych sprawozdań”**. Ta decyzja zastępuje poprzednie uzgodnienie, które zachowywało jego orientacyjne kwoty za 2012–2021 i pro forma TenderHut za 2022.
 
-Po wyjaśnieniu Mateusz polecił stosować wartości z oficjalnego raportu, a dla nieobjętych nim wcześniejszych lat — z przekazanego przez niego wykresu, którego poprawność potwierdził.
+Wykres obejmuje teraz **2017–2022**: dostępny wspólny zakres rocznych RZiS obu spółek do roku sprzedaży. Wcześniejsze słupki usunięto, ponieważ nie potwierdzono ich podziału ani wyniku netto. Nie przeliczano kwot USD z prospektu i nie użyto prognozy na 2021 jako wykonania.
 
-Przyjęto następującą hierarchię:
-- 2022: oficjalne sprawozdanie TenderHut (s. 50–51), pełny rok odtworzony z przychodów po przejęciu i kwot przed przejęciem: 3,406 + 0,376 + 2,956 + 1,550 = 8,288 mln PLN. Wszystkie kwoty w raporcie zaokrąglone do tys. PLN. To arytmetyczna suma sprzedaży obu spółek, nie twierdzenie o odrębnym skonsolidowanym sprawozdaniu „grupy KISS”.
-- 2012–2021: zweryfikowany przez właściciela wykres, ponieważ oficjalny raport TenderHut 2022 nie przedstawia rocznych wyników tych dwóch spółek za cały ten wcześniejszy okres.
-- Nie wykorzystano wtórnej serii ogólnych przychodów z agregatora zamiast przychodów ze sprzedaży; zakres tych wskaźników nie jest tożsamy.
+Na stronie pozostają tylko krótkie objaśnienia wskaźników; bibliografia jest w repozytorium, zgodnie z wcześniejszym życzeniem Mateusza.
 
-Na stronie nie opisuje się źródeł finansowych, zgodnie z życzeniem Mateusza. Nie dodaje się nieprawdziwej deklaracji „dane z KRS” dla całej serii. Poniższe linki i wcześniejsze porównanie pozostają dokumentacją techniczną w repozytorium, nie treścią witryny.
+## Spółki i źródła
 
-## Identyfikacja spółek
+- KISS Digital, KRS **0000435987**. Tożsamość potwierdza [oficjalny plan połączenia](https://kissdigital.com/theme/kiss/files/plan-polaczenia-sh-kd-publikacja.pdf) oraz [pełny odpis KRS](https://api-krs.ms.gov.pl/api/krs/OdpisPelny/0000435987?rejestr=P&format=json).
+- KISS Communications (Human), KRS **0000617465**. [Pełny odpis KRS](https://api-krs.ms.gov.pl/api/krs/OdpisPelny/0000617465?rejestr=P&format=json); marka Human występuje też w raporcie zarządu TenderHut za 2022.
+- Szczegółowe RZiS: publiczne odwzorowanie sprawozdań w [BizRaport — Digital](https://www.bizraport.pl/krs/0000435987) i [BizRaport — Communications](https://www.bizraport.pl/krs/0000617465), tabela „Rachunek zysków i strat”, okresy `p17`–`p22`. Odczyt 2026-11-03. Oryginalnych plików RDF XML nie pobrano; źródłem liczb jest publiczna transkrypcja, a nie samodzielnie zbadany oryginalny dokument.
 
-- KISS Digital: KRS 0000435987. Tożsamość potwierdza [plan połączenia SoftwareHut i KISS Digital](https://kissdigital.com/theme/kiss/files/plan-polaczenia-sh-kd-publikacja.pdf), s. 2, oraz [pełny odpis KRS](https://api-krs.ms.gov.pl/api/krs/OdpisPelny/0000435987?rejestr=P&format=json).
-- KISS Communications: KRS 0000617465, spółka działająca pod marką Human. Nazwę i markę łączą [strona kontaktowa Human](https://human.pl/kontakt) oraz sprawozdanie zarządu TenderHut za 2022 r., s. 13. Numer KRS znaleziony w publicznym powiązaniu udziałowym TenderHut, następnie sprawdzony w profilu spółki.
+Zapis wykorzystanych wierszy, numerów KRS, adresów i sum kontrolnych pobranych stron: [revenue-source-rows.json](./revenue-source-rows.json). Dane prezentacji: [revenue-data.json](../src/revenue-data.json).
 
-## Publiczne zestawienia oparte na sprawozdaniach KRS
+## Definicje i kontrola
 
-Źródła: [BizRaport — KISS Digital](https://www.bizraport.pl/krs/0000435987), [BizRaport — KISS Communications](https://www.bizraport.pl/krs/0000617465), tabele „Przychody i zysk netto”. To źródło wtórne, nie pobrany i zbadany oryginalny RZiS. Kolumna „Przychody” może obejmować szerszy zakres niż „przychody ze sprzedaży”.
+Wszystkie kwoty dotyczą pełnego roku kalendarzowego, w PLN z groszami, bez przeliczeń walutowych.
 
-| Rok | KISS Digital: przychody (PLN) | KISS Communications: przychody (PLN) | Suma przychodów (mln PLN, zaokr.) | Wykres Mateusza (mln PLN) |
+- **Przychody ze sprzedaży** = RZiS **A.I + A.IV**: sprzedaż produktów oraz towarów i materiałów. Nie jest to całe A („przychody netto ze sprzedaży i zrównane z nimi”), ponieważ A zawiera też zmianę stanu produktów i koszt wytworzenia na własne potrzeby. Nie jest to szersza seria „Przychody” z podsumowania agregatora.
+- **Wynik netto** = RZiS **L** („Zysk / strata netto”, po podatku).
+- **Razem** = arytmetyczna suma danych jednostkowych obu spółek w danym roku. Bez wyłączeń transakcji między spółkami; nie deklarujemy sprawozdania skonsolidowanego grupy KISS.
+- Słupki i ich etykiety są w mln PLN, zaokrąglone do dwóch miejsc. Dymki i tabele zawierają dokładne PLN z groszami. Suma jest obliczana przed zaokrągleniem etykiety.
+
+| Rok | Digital: sprzedaż PLN | Communications: sprzedaż PLN | Digital: wynik netto PLN | Communications: wynik netto PLN |
 | --- | ---: | ---: | ---: | ---: |
-| 2017 | 1 787 099,49 | 1 195 057,72 | 2,98 | 3,10 |
-| 2018 | 2 269 352,11 | 903 470,50 | 3,17 | 4,00 |
-| 2019 | 3 464 421,24 | 798 833,34 | 4,26 | 4,75 |
-| 2020 | 4 484 079,53 | 1 454 705,60 | 5,94 | 5,65 |
-| 2021 | 5 238 884,70 | 1 375 072,60 | 6,61 | 6,58 |
-| 2022 | 4 734 297,41 | 3 826 122,90 | 8,56 | 8,41 |
+| 2017 | 1 758 181,31 | 1 195 057,68 | −8 513,04 | 48 540,72 |
+| 2018 | 2 238 722,93 | 903 470,49 | −7 901,12 | 27 304,15 |
+| 2019 | 3 432 068,45 | 798 828,32 | 348 964,13 | 40 275,14 |
+| 2020 | 4 315 509,30 | 1 438 696,72 | 365 961,39 | 351 068,40 |
+| 2021 | 5 142 453,96 | 1 375 072,60 | −22 680,47 | −269 233,40 |
+| 2022 | 4 507 051,37 | 3 808 645,38 | 21 989,90 | −179 989,01 |
 
-Wartości są roczne, a nie kumulacyjne. Różnice nie są dowodem na konkretną przyczynę; nie rozstrzygnięto różnic definicyjnych, korekt ani rozliczeń wewnętrznych. Publiczne zestawienia nie potwierdzają wartości wykresu za lata 2012–2016.
+Przykłady istotnych różnic definicyjnych: Digital 2021 ma A = 4 927 391,96 PLN, ale sprzedaż A.I = 5 142 453,96 PLN, ze zmianą stanu produktów −215 062 PLN. Communications 2022 ma A.I = 3 775 018,55 PLN i A.IV = 33 626,83 PLN; suma sprzedaży wynosi 3 808 645,38 PLN.
 
-## Źródło pierwotne — raport roczny TenderHut 2022
+## Poprzednia wartość 2022
 
-[Skonsolidowane sprawozdanie finansowe TenderHut za 2022](https://assets-us-01.kc-usercontent.com/b9dc1b00-78e3-009e-2f3e-e73b815cfbf3/e7f83f92-505b-42c9-a201-7005e78f3d4d/TenderHut_SSF_MSSF_2022.pdf), s. 50–51. Plik znaleziony w oficjalnym [serwisie raportów TenderHut](https://reports.tenderhut.com/2022), przez publiczny katalog materiałów tego serwisu.
+[Skonsolidowane sprawozdanie TenderHut za 2022, s. 50–51](https://assets-us-01.kc-usercontent.com/b9dc1b00-78e3-009e-2f3e-e73b815cfbf3/e7f83f92-505b-42c9-a201-7005e78f3d4d/TenderHut_SSF_MSSF_2022.pdf) przedstawia kwoty po przejęciu i pro forma przed przejęciem, zaokrąglone do tys. PLN. Poprzedni wykres sumował je do 8,288 mln PLN. Nie mieszamy tego ujęcia MSSF z jednostkowymi RZiS: aktualna, jednolita seria daje **8 315 696,75 PLN sprzedaży i −157 999,11 PLN wyniku netto w 2022**. Różnicy zakresu raportowania nie przypisujemy konkretnej korekcie bez dodatkowego uzgodnienia.
 
-Raport opisuje kwoty po przejęciu oraz dodatkowe kwoty, które należałoby uwzględnić, gdyby przejęcie nastąpiło 1 stycznia 2022:
+## Utrzymanie wykresu
 
-- KISS Communications: 3 406 tys. PLN przychodów ze sprzedaży po przejęciu + 376 tys. PLN przed przejęciem = 3 782 tys. PLN w takim ujęciu pełnego roku.
-- KISS Digital: 2 956 tys. PLN po przejęciu + 1 550 tys. PLN przed przejęciem = 4 506 tys. PLN w takim ujęciu pełnego roku.
-- Arytmetyczna suma tych kwot: ok. 8,288 mln PLN. Nie jest automatycznie skonsolidowanym wynikiem grupy KISS ani tożsama z sumą wszystkich przychodów jednostkowych z KRS.
+`src/revenue-data.json` jest wspólnym wejściem dla dymków oraz generatora statycznego SVG i tabel bez JavaScript. Po edycji danych: `npm run charts:generate`. `npm run build` sprawdza zgodność wygenerowanego HTML z danymi, więc desktop, mobile i tabela nie mogą przypadkowo użyć różnych serii.
 
-Raporty MSSF i przychody jednostkowe z publicznego agregatora nie mogą być zamieniane bez uzgodnienia zakresu. Żadne z tych zestawień nie potwierdza dokładnie 8,41 mln PLN.
-
-## Zmiany na stronie
-
-Nagłówek, podpis, opis dostępności i tabela jednoznacznie wskazują roczne przychody. Kwota 2022 została zmieniona z 8,41 na 8,288 mln PLN zgodnie z wyżej opisanym rozstrzygnięciem. Wcześniejsze lata zachowano z wykresu potwierdzonego przez Mateusza. Usunięto opis źródeł z widocznego podpisu. Noty dotyczące szacunkowego zatrudnienia zachowano — odnoszą się do modelowanych danych, nie bibliografii.
+Wykres zespołu jest oddzielny: wartości szacowane 2018–2021 i ich oznaczenia pozostają bez zmian. Oba oznaczenia sprzedaży nadal wskazują **1 kw. 2022**.

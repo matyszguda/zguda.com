@@ -1,0 +1,8 @@
+[
+  {"year":2017,"digital":{"revenue":1758181.31,"netResult":-8513.04},"communications":{"revenue":1195057.68,"netResult":48540.72}},
+  {"year":2018,"digital":{"revenue":2238722.93,"netResult":-7901.12},"communications":{"revenue":903470.49,"netResult":27304.15}},
+  {"year":2019,"digital":{"revenue":3432068.45,"netResult":348964.13},"communications":{"revenue":798828.32,"netResult":40275.14}},
+  {"year":2020,"digital":{"revenue":4315509.30,"netResult":365961.39},"communications":{"revenue":1438696.72,"netResult":351068.40}},
+  {"year":2021,"digital":{"revenue":5142453.96,"netResult":-22680.47},"communications":{"revenue":1375072.60,"netResult":-269233.40}},
+  {"year":2022,"digital":{"revenue":4507051.37,"netResult":21989.90},"communications":{"revenue":3808645.38,"netResult":-179989.01}}
+]

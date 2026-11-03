@@ -1,0 +1,13 @@
+.team-chart .chart-year{transition:opacity 160ms ease-out}
+.team-chart .chart-year .chart-bar{transition:fill 160ms ease-out,fill-opacity 160ms ease-out,stroke 160ms ease-out,stroke-width 160ms ease-out}
+.team-chart .chart-year .chart-value,.team-chart .chart-year .chart-year-label{transition:fill 160ms ease-out}
+.team-chart.is-highlighting .chart-year:not(.is-active){opacity:.52}
+.team-chart .chart-year.is-active .chart-bar,.team-chart .chart-year:focus-visible .chart-bar{
+ fill:var(--accent);fill-opacity:1;stroke:var(--accent);stroke-width:2;paint-order:stroke fill;
+}
+.team-chart .chart-year.is-active .chart-value,.team-chart .chart-year.is-active .chart-year-label,
+.team-chart .chart-year:focus-visible .chart-value,.team-chart .chart-year:focus-visible .chart-year-label{fill:var(--accent)}
+.team-chart .chart-year:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+ .team-chart .chart-year,.team-chart .chart-year .chart-bar,.team-chart .chart-year .chart-value,.team-chart .chart-year .chart-year-label{transition:none}
+}
