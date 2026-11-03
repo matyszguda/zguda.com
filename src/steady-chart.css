@@ -1,0 +1,16 @@
+.steady-chart{margin:28px 0 24px;min-width:0;max-width:360px}
+.steady-chart svg{display:block;width:100%;height:auto;overflow:visible}
+.steady-chart text{font-family:inherit;font-size:16px;fill:var(--chart-ink);font-variant-numeric:tabular-nums}
+.steady-chart .steady-unit,.steady-chart .steady-tick{font-size:12px}
+.steady-baseline{stroke:var(--accent);stroke-opacity:.3;stroke-width:1}
+.steady-bar{fill:var(--accent)}
+.steady-year{cursor:pointer;transition:opacity 160ms ease-out;-webkit-tap-highlight-color:transparent}
+.steady-chart.is-highlighting .steady-year:not(.is-active){opacity:.4}
+.steady-year.is-active .steady-bar{stroke:var(--accent);stroke-width:2;paint-order:stroke fill}
+.steady-year:focus-visible{outline:2px solid var(--interaction);outline-offset:3px}
+.steady-tooltip{width:290px;padding:16px}
+.steady-tooltip .steady-tooltip-year{font-size:14px;line-height:1.4;font-weight:600;margin:0 0 14px}
+.steady-tooltip-values{margin:0;font-size:13px;line-height:1.5;font-variant-numeric:tabular-nums}
+.steady-tooltip-values>div{display:flex;justify-content:space-between;gap:16px;margin:8px 0}
+.steady-tooltip-values dd{margin:0;text-align:right;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.steady-year{transition:none}}
