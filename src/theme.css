@@ -1,4 +1,4 @@
-/* Base appearance: red, black and a shared textile surface. */
+/* Base appearance: red and black on a solid white surface. */
 :root{
  --primary:#f92700;
  --paper:#ffffff;
@@ -10,9 +10,6 @@
  --line:#ffc9bf;
  --tint:#ffe9e5;
  --chart-ink:#000000;
- /* Source-derived textile asset configured in canvas.css. */
- --canvas-texture:linear-gradient(#ffffff,#ffffff);
- --canvas-size:256px 256px;
 }
 body.is-subpage,
 .venture-details[open],.project[open],.chart-table[open],nav.is-open,
@@ -25,10 +22,7 @@ body.is-subpage,
 html{background:var(--paper)}
 body{min-height:100svh;color:var(--ink);background-color:var(--paper)}
 body,header{
- background-image:var(--canvas-texture);
- background-size:var(--canvas-size);
- background-repeat:repeat;
- background-attachment:fixed;
+ background-image:none;
 }
 header{background-color:var(--paper);gap:18px}
 header nav{margin-left:auto}
@@ -99,17 +93,12 @@ html[data-wash="ornate"] .foundation-impact-values strong{
  overflow-wrap:anywhere;
 }
 html[data-wash="mono-light"]{--primary:#000000;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed}
-html[data-wash="mono-light"] body,html[data-wash="mono-light"] header{background-blend-mode:luminosity}
-html[data-wash="mono-light"] .contact-photo img,html[data-wash="mono-light"] .site-wordmark img{filter:grayscale(1)}
+html[data-wash="mono-light"] .contact-photo img{filter:grayscale(1)}
 html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#000000;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff}
-html[data-wash="mono-dark"] body,html[data-wash="mono-dark"] header{
- background-image:linear-gradient(#ffffff,#ffffff),var(--canvas-texture);
- background-blend-mode:difference,luminosity;
-}
 html[data-wash="mono-dark"] .contact-photo img{filter:grayscale(1)}
 html[data-wash="mono-dark"] .brand-logo,html[data-wash="mono-dark"] .company-logo img{filter:brightness(0) invert(1)}
-html[data-wash="mono-dark"] .site-wordmark{mix-blend-mode:normal}
-html[data-wash="mono-dark"] .site-wordmark img{filter:grayscale(1) invert(1)}
+html[data-wash="mono-dark"] .site-wordmark{mix-blend-mode:screen}
+html[data-wash="mono-dark"] .site-wordmark img{filter:var(--wordmark-filter) invert(1)}
 @media(hover:hover) and (pointer:fine){.ventures .venture:hover{transform:translateY(-3px)}}
 @media(min-width:761px){.ventures .venture:focus-within{transform:translateY(-3px)}}
 @media(max-width:1000px) and (min-width:761px){.ventures{gap:24px}.ventures .venture{padding:18px}}

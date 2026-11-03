@@ -1,27 +1,24 @@
-/* Pre-filtered soft grain at native CSS size: no subpixel weave downsampling. */
+/* Flat original wordmark on the same solid surface as the page. */
 :root{
  --site-mark-width:220px;
- --canvas-texture:url('/logos/canvas-soft.webp');
- --canvas-size:128px 128px;
+ --wordmark-filter:grayscale(1) contrast(2);
 }
 .wordmark.site-wordmark,footer .wordmark.site-wordmark{
  width:var(--site-mark-width);
  height:auto;
- aspect-ratio:2052/450;
- overflow:visible;
- mix-blend-mode:normal;
+ aspect-ratio:1818/441;
+ overflow:hidden;
+ mix-blend-mode:multiply;
 }
 .site-wordmark img{
  position:absolute;
- width:105.848%;
+ width:109.0759076%;
  max-width:none;
  height:auto;
- left:-2.924%;
- top:-33.3333%;
+ left:-4.620462%;
+ top:-39.4557823%;
  display:block;
- /* Fade only the outer cloth margins; leave the embossed lettering intact. */
- mask-image:linear-gradient(to right,transparent,#000 2%,#000 98%,transparent),linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent);
- mask-composite:intersect;
+ filter:var(--wordmark-filter);
 }
 @media(max-width:760px){
  :root{--site-mark-width:140px}
