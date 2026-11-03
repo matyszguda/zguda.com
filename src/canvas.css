@@ -1,24 +1,26 @@
-/* Flat original wordmark on the same solid surface as the page. */
+/* Original smooth-background logo, with blank margins blending into the page. */
 :root{
  --site-mark-width:220px;
- --wordmark-filter:grayscale(1) contrast(2);
 }
 .wordmark.site-wordmark,footer .wordmark.site-wordmark{
  width:var(--site-mark-width);
  height:auto;
- aspect-ratio:1818/441;
- overflow:hidden;
- mix-blend-mode:multiply;
+ aspect-ratio:1472/366;
+ overflow:visible;
+ mix-blend-mode:normal;
 }
 .site-wordmark img{
  position:absolute;
- width:109.0759076%;
+ width:113.5869565%;
  max-width:none;
  height:auto;
- left:-4.620462%;
- top:-39.4557823%;
+ left:-6.7934783%;
+ top:-81.9672131%;
  display:block;
- filter:var(--wordmark-filter);
+ pointer-events:none;
+ filter:none;
+ mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent),linear-gradient(to bottom,transparent,#000 30%,#000 72%,transparent);
+ mask-composite:intersect;
 }
 @media(max-width:760px){
  :root{--site-mark-width:140px}

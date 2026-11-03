@@ -35,7 +35,10 @@ if (button) {
     button.title = `${label}. Kliknij, by losować. Przytrzymaj, by przywrócić podstawowy.`;
     if (announce && status) status.textContent = label;
     const theme = document.querySelector('meta[name="theme-color"]');
-    if (theme) theme.content = ['invert', 'mono-dark'].includes(mode) ? '#000000' : '#ffffff';
+    if (theme) {
+      const channels = getComputedStyle(document.body).backgroundColor.match(/\d+/g).slice(0, 3).map(Number);
+      theme.content = '#' + channels.map(value => (mode === 'invert' ? 255 - value : value).toString(16).padStart(2, '0')).join('');
+    }
   }
   // A reload starts a fresh play session; internal navigation keeps the selection.
   const reloaded = performance.getEntriesByType('navigation')[0]?.type === 'reload';

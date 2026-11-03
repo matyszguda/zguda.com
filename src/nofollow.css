@@ -1,0 +1,14 @@
+.nofollow-page{max-width:1050px}
+.nofollow-page h1{margin-top:24px}
+.nofollow-intro{max-width:620px;font-size:18px;line-height:1.7;margin-bottom:0}
+.backlog-list{counter-reset:backlog;list-style:none;padding:0;margin:64px 0;display:grid;gap:40px;max-width:760px}
+.backlog-list>li{counter-increment:backlog;display:grid;grid-template-columns:28px minmax(0,1fr);gap:20px}
+.backlog-list>li::before{content:counter(backlog,decimal-leading-zero);font-size:12px;line-height:2.6;font-variant-numeric:tabular-nums;color:var(--muted)}
+.backlog-list h2{font-size:clamp(22px,2.5vw,30px);line-height:1.25;letter-spacing:-.035em;margin:0 0 12px;overflow-wrap:break-word}
+.backlog-list p{font-size:16px;line-height:1.7;margin:0;overflow-wrap:break-word}
+@media(max-width:760px){
+ .nofollow-intro{font-size:16px}
+ .backlog-list{margin:44px 0;gap:32px}
+ .backlog-list>li{grid-template-columns:22px minmax(0,1fr);gap:12px}
+ .backlog-list>li::before{line-height:2.3}
+}

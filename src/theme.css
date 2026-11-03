@@ -1,7 +1,7 @@
-/* Base appearance: red and black on a solid white surface. */
+/* Base appearance: red and black on the logo's smooth cream surface. */
 :root{
  --primary:#f92700;
- --paper:#ffffff;
+ --paper:#efe8e4;
  --surface:transparent;
  --ink:var(--primary);
  --muted:var(--primary);
@@ -32,7 +32,7 @@ header nav{margin-left:auto}
  background:transparent;color:var(--ink);
 }
 .brand-logo,.company-logo img{filter:brightness(0)}
-.wordmark.site-wordmark{mix-blend-mode:multiply}
+.wordmark.site-wordmark{mix-blend-mode:normal}
 .story-card:hover,.map-tooltip{color:var(--interaction)}
 a:hover,button:hover{color:var(--accent)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--interaction)}
@@ -53,6 +53,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .contact.has-photo h2{font-size:clamp(42px,5vw,76px)}
 .contact-photo{margin:0;max-width:420px;justify-self:end}
 .contact-photo img{display:block;width:100%;height:auto}
+footer .footer-links{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+footer .footer-links>a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:11px}
+footer .footer-links .easter-link{min-width:44px;font-size:10px;text-decoration:none;opacity:.3}
+footer .footer-links .easter-link:hover,footer .footer-links .easter-link:focus-visible{opacity:1}
 /* Flat Swiss-style editorial grid. */
 .ventures{gap:40px;perspective:none;isolation:auto;align-items:start;padding-top:0}
 .ventures .venture{padding:24px;border:0;border-radius:0;box-shadow:none;transform:none;will-change:auto;transition:transform 160ms ease-out}
@@ -92,13 +96,13 @@ html[data-wash="ornate"] .foundation-impact-values strong{
  font-family:'Cormorant Garamond',Georgia,serif!important;
  overflow-wrap:anywhere;
 }
-html[data-wash="mono-light"]{--primary:#000000;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed}
+html[data-wash="mono-light"]{--primary:#000000;--paper:#e9e9e9;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed}
 html[data-wash="mono-light"] .contact-photo img{filter:grayscale(1)}
-html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#000000;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff}
+html[data-wash="mono-light"] .site-wordmark img{filter:grayscale(1)}
+html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#161616;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff}
 html[data-wash="mono-dark"] .contact-photo img{filter:grayscale(1)}
 html[data-wash="mono-dark"] .brand-logo,html[data-wash="mono-dark"] .company-logo img{filter:brightness(0) invert(1)}
-html[data-wash="mono-dark"] .site-wordmark{mix-blend-mode:screen}
-html[data-wash="mono-dark"] .site-wordmark img{filter:var(--wordmark-filter) invert(1)}
+html[data-wash="mono-dark"] .site-wordmark img{filter:grayscale(1) invert(1)}
 @media(hover:hover) and (pointer:fine){.ventures .venture:hover{transform:translateY(-3px)}}
 @media(min-width:761px){.ventures .venture:focus-within{transform:translateY(-3px)}}
 @media(max-width:1000px) and (min-width:761px){.ventures{gap:24px}.ventures .venture{padding:18px}}
