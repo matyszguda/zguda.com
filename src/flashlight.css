@@ -1,0 +1,39 @@
+html[data-wash="flashlight"]{
+ --primary:#ffffff;
+ --paper:#161616;
+ --ink:#ffffff;
+ --muted:#ffffff;
+ --accent:#ffffff;
+ --interaction:#ffffff;
+ --line:#444444;
+ --tint:#292929;
+ --chart-ink:#ffffff;
+}
+html[data-wash="flashlight"] .brand-logo,
+html[data-wash="flashlight"] .company-logo img{filter:brightness(0) invert(1)}
+html[data-wash="flashlight"] .site-wordmark img{filter:grayscale(1) invert(1)}
+.flashlight-shade{
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:2147483600;
+ pointer-events:none;
+ contain:strict;
+ --flashlight-x:50vw;
+ --flashlight-y:24vh;
+ background:radial-gradient(circle at var(--flashlight-x) var(--flashlight-y),
+  transparent 0 100px,
+  rgb(0 0 0 / .18) 150px,
+  rgb(0 0 0 / .76) 210px,
+  rgb(0 0 0 / .96) 270px);
+}
+html[data-wash="flashlight"] .flashlight-shade{display:block}
+@media(max-width:760px){
+ .flashlight-shade{
+  background:radial-gradient(circle at var(--flashlight-x) var(--flashlight-y),
+   transparent 0 60px,
+   rgb(0 0 0 / .22) 95px,
+   rgb(0 0 0 / .78) 135px,
+   rgb(0 0 0 / .96) 180px);
+ }
+}

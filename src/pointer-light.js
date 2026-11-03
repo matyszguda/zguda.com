@@ -20,6 +20,7 @@ const sparks = new Set();
 
 function clickableAtPointer() {
   const element = document.elementFromPoint(target.x, target.y)?.closest(interactive);
+  if (element?.matches('.easter-link:not([data-egg-state="revealed"])')) return null;
   return element && !element.matches(':disabled,[aria-disabled="true"]') ? element : null;
 }
 

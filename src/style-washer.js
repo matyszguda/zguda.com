@@ -1,5 +1,5 @@
 const button = document.querySelector('.style-washer');
-const modes = ['invert', 'ornate', 'blue', 'mono-light', 'mono-dark'];
+const modes = ['invert', 'ornate', 'blue', 'mono-light', 'mono-dark', 'flashlight'];
 const labels = {
   base: 'Styl podstawowy',
   invert: 'Inwersja kolorów',
@@ -7,6 +7,7 @@ const labels = {
   blue: 'Błękit zamiast czerwieni',
   'mono-light': 'Czerń na bieli',
   'mono-dark': 'Biel na czerni',
+  flashlight: 'Ciemna strona z latarką',
 };
 const storageKey = 'zguda-style-wash';
 function savedMode() {
@@ -31,8 +32,10 @@ if (button) {
       } catch { /* Appearance controls also work without browser storage. */ }
     }
     const label = labels[mode];
-    button.setAttribute('aria-label', `Pralka — wylosuj styl strony. Aktualnie: ${label}.`);
-    button.title = `${label}. Kliknij, by losować. Przytrzymaj, by przywrócić podstawowy.`;
+    const action = mode === 'base' ? 'Wylosuj alternatywny styl' : 'Przywróć oryginalny styl';
+    button.setAttribute('aria-label', `Pralka — ${action.toLowerCase()}. Aktualnie: ${label}.`);
+    button.setAttribute('aria-pressed', String(mode !== 'base'));
+    button.title = `${label}. ${action}. Przytrzymaj, by przywrócić podstawowy.`;
     if (announce && status) status.textContent = label;
     const theme = document.querySelector('meta[name="theme-color"]');
     if (theme) {
@@ -47,9 +50,9 @@ if (button) {
   button.addEventListener('click', event => {
     if (performance.now() < ignoreClickUntil) return;
     if (event.shiftKey) { applyMode('base'); return; }
-    // Effects replace one another; the next draw never repeats the current mode.
-    const candidates = modes.filter(mode => mode !== root.dataset.wash);
-    applyMode(candidates[Math.floor(Math.random() * candidates.length)]);
+    // Every variation is followed by the original appearance before another draw.
+    if (modes.includes(root.dataset.wash)) applyMode('base');
+    else applyMode(modes[Math.floor(Math.random() * modes.length)]);
     button.classList.add('is-washing');
     clearTimeout(animationTimer);
     animationTimer = setTimeout(() => button.classList.remove('is-washing'), 520);

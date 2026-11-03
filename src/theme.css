@@ -55,8 +55,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .contact-photo img{display:block;width:100%;height:auto}
 footer .footer-links{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
 footer .footer-links>a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:11px}
-footer .footer-links .easter-link{min-width:44px;font-size:10px;text-decoration:none;opacity:.3}
-footer .footer-links .easter-link:hover,footer .footer-links .easter-link:focus-visible{opacity:1}
+footer .footer-links .easter-link{min-width:44px;text-decoration:none}
 /* Flat Swiss-style editorial grid. */
 .ventures{gap:40px;perspective:none;isolation:auto;align-items:start;padding-top:0}
 .ventures .venture{padding:24px;border:0;border-radius:0;box-shadow:none;transform:none;will-change:auto;transition:transform 160ms ease-out}

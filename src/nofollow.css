@@ -1,5 +1,5 @@
 .nofollow-page{max-width:1050px}
-.nofollow-page h1{margin-top:24px}
+.nofollow-page h1{margin-top:24px;font-size:clamp(32px,4.5vw,56px);line-height:1.12;max-width:840px;overflow-wrap:break-word}
 .nofollow-intro{max-width:620px;font-size:18px;line-height:1.7;margin-bottom:0}
 .backlog-list{counter-reset:backlog;list-style:none;padding:0;margin:64px 0;display:grid;gap:40px;max-width:760px}
 .backlog-list>li{counter-increment:backlog;display:grid;grid-template-columns:28px minmax(0,1fr);gap:20px}

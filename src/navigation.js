@@ -1,5 +1,7 @@
 import './style-washer.js';
 import './pointer-light.js';
+import './flashlight.js';
+import './secret-egg.js';
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#site-nav');
 function closeMenu(){toggle?.setAttribute('aria-expanded','false');nav?.classList.remove('is-open');}
