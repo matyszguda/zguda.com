@@ -1,0 +1,10 @@
+.cieplo-metrics{display:grid;gap:20px;margin:24px 0 28px}
+.cieplo-metric{display:block;width:fit-content;max-width:100%;padding:0;border:0;background:transparent;color:var(--accent);font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity 160ms ease-out}
+.cieplo-metric strong{display:block;font:700 clamp(34px,3.5vw,48px)/1.15 'Instrument Sans',sans-serif;letter-spacing:-.04em;white-space:nowrap}
+.cieplo-metric span{display:block;margin-top:8px;font-size:14px;line-height:1.6}
+.cieplo-metric:hover,.cieplo-metric.is-active{opacity:.8}
+.cieplo-metric:focus-visible{outline:2px solid var(--interaction);outline-offset:6px}
+.cieplo-tooltip{width:300px;padding:16px}
+.cieplo-tooltip>p{margin:0;font-size:13px;line-height:1.6}
+html[data-wash="ornate"] .cieplo-metric strong{font-family:'Cormorant Garamond',Georgia,serif!important}
+@media(prefers-reduced-motion:reduce){.cieplo-metric{transition:none}}

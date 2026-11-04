@@ -27,6 +27,8 @@ Przychody: roczna seria **2012–2022**. Lata 2012–2016 pokazują historyczne 
 
 Steady: niewielki wykres przychodów 2024–2026 w karcie przedsięwzięcia, bez dużej liczby i osobnego podpisu o kontraktach. Dymki pokazują przychody i zysk, z obsługą hover/focus/dotyku. Wspólne dane dla SVG i dymków: `src/steady-data.json`. Pochodzenie danych i zakres wskaźników: `docs/steady-financials.md`. Obsługa dymków obu wykresów finansowych: `src/chart-tooltip.js`.
 
+Ciepło: 26 607 obsłużonych klientów i 11 084 porcje barszczu ukraińskiego, dane przekazane przez Mateusza za 12 miesięcy na dzień 04.11.2026. Liczby na karcie otwierają dymek z okresem po najechaniu, fokusie lub dotknięciu (`src/cieplo-metrics.js`, `src/cieplo-metrics.css`). Bez JavaScript okres pozostaje w natywnych `title`. Nie opisujemy klientów jako unikalnych ani okresu jako roku kalendarzowego.
+
 Pralka działa naprzemiennie: oryginalny wygląd → losowy wariant → oryginalny wygląd → losowy wariant. Sześć wariantów to inwersja kolorów, fonty szeryfowe i ozdobne, błękit zamiast czerwieni, czerń na bieli, biel na czerni i ciemna strona z latarką. Przytrzymanie przycisku lub Shift + klik przywraca styl podstawowy. Wybór pozostaje aktywny podczas przechodzenia między podstronami w tej samej karcie (`sessionStorage`). Każde odświeżenie strony przywraca styl podstawowy i usuwa zapamiętany wariant. Obsługa: `src/style-washer.js`.
 
 Latarka (`src/flashlight.js`, `src/flashlight.css`) przyciemnia stronę i odsłania fragment przy kursorze, dotknięciu albo elemencie wskazanym klawiaturą. Warstwa jest wyłączona poza tym wariantem i nie przechwytuje kliknięć. Pozycja jest przeliczana tylko przy interakcji, bez ciągłej pętli animacji; laser i iskry pozostają nad warstwą światła.

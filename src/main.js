@@ -14,3 +14,4 @@ import './email-contact.js';
 import './income-chart.js';
 import './team-chart.js';
 import './steady-chart.js';
+import './cieplo-metrics.js';
