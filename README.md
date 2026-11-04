@@ -33,6 +33,6 @@ Latarka (`src/flashlight.js`, `src/flashlight.css`) przyciemnia stronę i odsła
 
 Laser w kolorze `#FF7F00` zastępuje kursor myszy i rozszerza obręcz nad linkami, przyciskami i pozostałymi kontrolkami. Nad klikalnym elementem emituje drobne iskry z miejsca kontaktu; kliknięcie dodaje krótki rozbłysk odprysków. Cząstki opadają i zanikają, a ich liczba jest ograniczona do 32. Po opuszczeniu elementu emisja ustaje. Kliknięcie zwęża punkt, klawiatura przywraca zwykły kursor. Efekt kursora jest wyłączony na ekranach dotykowych oraz przy ograniczonych animacjach. Obsługa: `src/pointer-light.js`, `src/pointer-light.css`.
 
-Zdjęcie przy kontakcie: `public/PXL_20231124_165042270.jpg`, oryginalny plik przesłany przez Mateusza. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
+Zdjęcie przy kontakcie: `public/zdjecie_bez_marginesow.png` (1036 × 1541), plik przesłany przez Mateusza, zastępujący wcześniejsze `PXL_20231124_165042270.jpg`. Sekcja `contact.has-photo` pokazuje fotografię obok tekstu na desktopie i pod tekstem na telefonie, zachowując pełne proporcje.
 
 Karty aktualnych przedsięwzięć: płaski układ typograficzny z równymi odstępami i monochromatycznymi logotypami. Widoczna lewa krawędź znaków jest wyrównana do tekstu, z kompensacją przezroczystych marginesów Zero Camps i Ciepła. Ruch ograniczony do 3 px przy najechaniu lub fokusie, z obsługą ograniczonych animacji. Bez skryptów przewijania i głębi 3D.
