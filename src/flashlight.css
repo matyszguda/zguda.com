@@ -8,6 +8,7 @@ html[data-wash="flashlight"]{
  --line:#444444;
  --tint:#292929;
  --chart-ink:#ffffff;
+ --map-land:#8a8a8a;
 }
 html[data-wash="flashlight"] .brand-logo,
 html[data-wash="flashlight"] .company-logo img{filter:brightness(0) invert(1)}

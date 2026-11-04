@@ -10,6 +10,8 @@
  --line:#ffc9bf;
  --tint:#ffe9e5;
  --chart-ink:#000000;
+ --map-ocean:var(--paper);
+ --map-land:#817b76;
 }
 body.is-subpage,
 .venture-details[open],.project[open],.chart-table[open],nav.is-open,
@@ -43,10 +45,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .is-estimate .chart-bar{stroke:var(--chart-ink)}
 .chart-event-label,.chart-event-year{fill:var(--accent)}
 .chart-axis-break path:last-child{stroke:var(--accent)}
-#client-map{background:transparent}
-.map-land{fill:var(--tint);stroke:var(--paper)}
-.map-point{fill:var(--accent);stroke:var(--paper)}
-.map-point.selected,.map-point:focus-visible{fill:var(--interaction);stroke:var(--interaction)}
+#client-map{background:var(--map-ocean)}
+.map-land{fill:var(--map-land);stroke:var(--map-ocean)}
+.map-point{fill:var(--accent);stroke:var(--map-ocean);stroke-width:3;paint-order:stroke fill}
+.map-point.selected,.map-point:focus-visible{fill:var(--interaction);stroke:var(--map-ocean);stroke-width:4}
 .map-tooltip{background:var(--paper);box-shadow:0 0 0 1px var(--line)}
 .contact-copy{min-width:0}
 .aside-section>.interests-copy{max-width:760px}
@@ -98,10 +100,10 @@ html[data-wash="ornate"] .foundation-impact-values strong{
  font-family:'Cormorant Garamond',Georgia,serif!important;
  overflow-wrap:anywhere;
 }
-html[data-wash="mono-light"]{--primary:#000000;--paper:#e9e9e9;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed}
+html[data-wash="mono-light"]{--primary:#000000;--paper:#e9e9e9;--ink:#000000;--muted:#000000;--accent:#000000;--interaction:#000000;--line:#cccccc;--tint:#ededed;--map-land:#777777}
 html[data-wash="mono-light"] .contact-photo img{filter:grayscale(1)}
 html[data-wash="mono-light"] .site-wordmark img{filter:grayscale(1)}
-html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#161616;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff}
+html[data-wash="mono-dark"]{--primary:#ffffff;--paper:#161616;--ink:#ffffff;--muted:#ffffff;--accent:#ffffff;--interaction:#ffffff;--line:#444444;--tint:#191919;--chart-ink:#ffffff;--map-land:#8a8a8a}
 html[data-wash="mono-dark"] .contact-photo img{filter:grayscale(1)}
 html[data-wash="mono-dark"] .brand-logo,html[data-wash="mono-dark"] .company-logo img{filter:brightness(0) invert(1)}
 html[data-wash="mono-dark"] .site-wordmark img{filter:grayscale(1) invert(1)}

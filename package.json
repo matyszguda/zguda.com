@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "test:counter": "node --test tests/cieplo-counter.test.js",
     "charts:generate": "node scripts/update-revenue-chart.mjs && node scripts/update-steady-chart.mjs",
     "charts:check": "node scripts/update-revenue-chart.mjs --check && node scripts/update-steady-chart.mjs --check",
     "build": "npm run charts:check && vite build --base=./",
