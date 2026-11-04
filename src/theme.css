@@ -38,6 +38,9 @@ header nav{margin-left:auto}
 .story-card:hover,.map-tooltip{color:var(--interaction)}
 a:hover,button:hover{color:var(--accent)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--interaction)}
+.link-arrow{display:inline-block;width:1em;height:1em;min-width:12px;min-height:12px;vertical-align:-.125em;flex-shrink:0;pointer-events:none;overflow:visible}
+.venture h3 a{display:inline-flex;align-items:center}
+.quote-author .link-arrow{width:16px;height:16px}
 .menu-toggle[aria-expanded=true]{color:var(--interaction)}
 .chart-tick,.chart-value,.chart-year-label{fill:var(--chart-ink)}
 .team-chart .chart-bar{fill:var(--chart-ink)}

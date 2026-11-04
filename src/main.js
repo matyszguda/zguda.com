@@ -1,3 +1,5 @@
+import { arrowIcon } from './link-icons.js';
+
 const projects = [
  ['Haddad PLM','Procesy / Discovery / Produkt','System wspierający tworzenie kolekcji odzieżowych — od koncepcji i projektowania po produkcję. Poznanie procesów różnych zespołów oraz stopniowe wdrażanie wspólnego środowiska pracy.','haddad-plm'],
  ['Eurocash','Retail / E-commerce / Organizacja','Współpraca przy usługach cyfrowych Delikatesów Centrum: Delikarcie, stronie sieci oraz Click & Collect. Podczas pandemii kluczowe było szybkie określenie MVP i uruchomienie rezerwacji zakupów.','sklep-delikatesy-pl'],
@@ -5,7 +7,7 @@ const projects = [
  ['Parlor Social','Społeczność / Mobile / Integracje','Cyfrowe zaplecze nowojorskiego klubu: aplikacje mobilne, panel administracyjny, płatności i CRM. Za identyfikację oraz projekt interfejsu odpowiadało DTE Studio.','parlor-social'],
  ['PAYBACK','Koncepcja / Gry / Zaangażowanie','Punktołap — gra mobilna łącząca zabawę, rywalizację i nagrody w programie lojalnościowym. Projekt na styku marketingu, technologii i pracy kreatywnej.','punktolap']
 ];
-document.querySelector('#projects').innerHTML=projects.map(([name,tags,text,path],i)=>`<details class="project"><summary><span class="project-number">0${i+1}</span><h3>${name}</h3><span class="project-tags">${tags}</span><span class="plus">+</span></summary><div class="project-body"><p>${text}</p><a class="text-link" href="https://kissdigital.com/work/${path}" target="_blank" rel="noopener noreferrer">Opis realizacji w KISS digital ↗</a></div></details>`).join('');
+document.querySelector('#projects').innerHTML=projects.map(([name,tags,text,path],i)=>`<details class="project"><summary><span class="project-number">0${i+1}</span><h3>${name}</h3><span class="project-tags">${tags}</span><span class="plus">+</span></summary><div class="project-body"><p>${text}</p><a class="text-link" href="https://kissdigital.com/work/${path}" target="_blank" rel="noopener noreferrer">Opis realizacji w KISS digital ${arrowIcon()}</a></div></details>`).join('');
 
 import './navigation.js';
 import './client-map.js';
