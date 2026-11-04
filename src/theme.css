@@ -49,6 +49,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .map-point.selected,.map-point:focus-visible{fill:var(--interaction);stroke:var(--interaction)}
 .map-tooltip{background:var(--paper);box-shadow:0 0 0 1px var(--line)}
 .contact-copy{min-width:0}
+.aside-section>.interests-copy{max-width:760px}
+.interests-copy p{margin:0 0 24px}
+.interests-copy p:last-child{margin-bottom:0}
 .contact.has-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);gap:64px;align-items:center}
 .contact.has-photo h2{font-size:clamp(42px,5vw,76px)}
 .contact-photo{margin:0;max-width:420px;justify-self:end}
