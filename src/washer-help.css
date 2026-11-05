@@ -1,0 +1,13 @@
+.washer-help-tooltip{pointer-events:none}
+.washer-help-tooltip.is-visible{
+ position:fixed;z-index:2147483620;
+ display:block;box-sizing:border-box;
+ width:360px;max-width:calc(100vw - 24px);height:auto;max-height:calc(100dvh - 24px);
+ margin:0;padding:14px 16px;
+ clip:auto;clip-path:none;overflow:auto;white-space:normal;
+ border:1px solid var(--interaction);border-top:2px solid var(--primary);
+ background:var(--paper);color:var(--interaction);
+ font-size:14px;line-height:1.65;letter-spacing:0;font-weight:400;
+ box-shadow:0 8px 24px rgb(0 0 0 / .12);
+ pointer-events:auto;
+}

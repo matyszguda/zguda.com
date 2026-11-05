@@ -1,5 +1,6 @@
 import './language-switcher.js';
 import './style-washer.js';
+import './washer-help.js';
 import './pointer-light.js';
 import './flashlight.js';
 import './secret-egg.js';
