@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>It’s in the doing that the idea comes. — Mateusz Zguda</title>
+<meta name="description" content="On Doug Patt’s story and the words of Edmund Bacon he quotes: ideas come through doing.">
+<meta name="theme-color" content="#efe8e4">
+<!-- language-bootstrap:start --><meta name="site-root" content="../../../"><link rel="canonical" href="https://zguda.com/en/historie/w-dzialaniu/"><link rel="alternate" hreflang="pl" href="https://zguda.com/historie/w-dzialaniu/"><link rel="alternate" hreflang="en" href="https://zguda.com/en/historie/w-dzialaniu/"><link rel="alternate" hreflang="x-default" href="https://zguda.com/historie/w-dzialaniu/"><script>// Embedded in the head by scripts/update-locales.mjs, before content is painted.
+(() => {
+  const rootMeta = document.querySelector('meta[name="site-root"]');
+  if (!rootMeta) return;
+  const current = new URL(window.location.href);
+  const root = new URL(rootMeta.content, current);
+  if (!current.pathname.startsWith(root.pathname)) return;
+  const relative = current.pathname.slice(root.pathname.length);
+  const englishPage = relative === 'en' || relative.startsWith('en/');
+  const pagePath = englishPage ? relative.replace(/^en\/?/, '') : relative;
+  const requested = current.searchParams.get('lang')?.toLowerCase();
+  const explicit = requested === 'en' || requested === 'pl' ? requested : null;
+  let saved = null;
+  try {
+    const value = window.localStorage.getItem('zguda-language');
+    if (value === 'en' || value === 'pl') saved = value;
+    if (explicit) {
+      window.localStorage.setItem('zguda-language', explicit);
+      if (window.localStorage.getItem('zguda-language') !== explicit) throw new Error('Storage unavailable');
+    }
+  } catch {
+    document.documentElement.dataset.languageStorage = 'unavailable';
+  }
+  const slavic = new Set([
+    'pl', 'cs', 'sk', 'sl', 'hr', 'bs', 'sr', 'mk', 'bg', 'ru', 'uk', 'be',
+    'sh', 'cnr', 'hsb', 'dsb', 'csb', 'szl', 'rue', 'cu',
+    'pol', 'ces', 'cze', 'slk', 'slo', 'slv', 'hrv', 'bos', 'srp', 'scc',
+    'scr', 'mkd', 'mac', 'bul', 'rus', 'ukr', 'bel', 'chu',
+  ]);
+  const primary = (window.navigator.languages?.[0] || window.navigator.language || 'en')
+    .toLowerCase().replace(/_/g, '-').split('-')[0];
+  const language = explicit || saved || (englishPage ? 'en' : slavic.has(primary) ? 'pl' : 'en');
+  const target = new URL((language === 'en' ? 'en/' : '') + pagePath, root);
+  target.search = current.search;
+  target.hash = current.hash;
+  if (target.pathname !== current.pathname) {
+    document.documentElement.style.visibility = 'hidden';
+    window.location.replace(target.href);
+  }
+})();</script><!-- language-bootstrap:end -->  <script type="module" crossorigin src="../../../assets/navigation-Cus2kh6X.js"></script>
+  <link rel="stylesheet" crossorigin href="../../../assets/navigation-7xzAzln0.css">
+</head>
+<body class="is-subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="wordmark site-wordmark" href="../../" aria-label="Mateusz Zguda — home page"><img src="../../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a>
+
+<nav id="site-nav" aria-label="Main menu"><a href="../../#historie">All stories</a><a href="../../#kontakt">Contact <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></nav><div class="header-tools"><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">＋</span></button><button class="style-washer" type="button" aria-label="Washing machine — pick a random style" aria-describedby="style-wash-help" title="Pick a random style. Click again to restore the original."><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1.5"></rect><path d="M4 7h16M10 4.5h4"></path><circle cx="7" cy="4.5" r=".6" fill="currentColor" stroke="none"></circle><g class="washer-drum"><circle cx="12" cy="14" r="5"></circle><path d="M7.5 14c1.5 2 3 2 4.5 0s3-2 4.5 0"></path></g></svg></button><span class="sr-only" id="style-wash-help">Clicks alternate between a random style and the original. Hold the button or Shift-click to restore the default style.</span><span class="sr-only style-wash-status" role="status" aria-live="polite"></span><a class="language-toggle" href="../../../historie/w-dzialaniu/?lang=pl" lang="pl" hreflang="pl" aria-label="Switch to Polish">PL</a></div>
+</header>
+<main id="main" class="story-page motto-page">
+<a class="text-link" href="../../"><svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7"></path></svg> Back to the home page</a>
+<div class="eyebrow">PERSONAL PERSPECTIVE / MY MOTTO</div>
+<h1 lang="en">It’s in the doing that the idea comes.</h1>
+<p class="motto-attribution"><cite>edmund bacon</cite></p>
+<div class="story-byline">AS TOLD BY MATEUSZ ZGUDA</div>
+<article class="story-prose" aria-label="Why ideas come through doing">
+<p>In 2010, I came across <a href="https://www.youtube.com/watch?v=fUhKWwOpByw" target="_blank" rel="noopener noreferrer">a funny YouTube video on the How to Architect channel</a>. I often return to this story by Doug Patt, in which he quotes Edmund Bacon: “It’s in the doing that the idea comes.” It is pretty much my motto for life.</p>
+<p>Bacon was an American architect and urban planner, one of the people who shaped post-war Philadelphia. He led the city’s planning commission for more than twenty years and also wrote the book <em lang="en">Design of Cities</em>. He designed whole sections of the city, but this one thought also resonates with me in much smaller, everyday matters.</p>
+<p>I understand it in a very practical way: we can start with only the outline of an idea. Something interests us, there is something we want to test, and we make a first attempt. Only then do we notice possibilities we could not see before. A sketch, a conversation or a prototype gives us something to respond to. The next step becomes easier.</p>
+<p>I often remind myself of those words when I try to work everything out in advance. They give me the freedom to start with something imperfect and see where it takes me. After all, doing is part of coming up with ideas.</p>
+</article>
+<aside class="related-story"><span class="index">READ NEXT</span><h2><a href="../zero-camps/">From an empty office to Zero Camps. <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></h2></aside>
+</main>
+<footer><a class="wordmark site-wordmark" href="../../" aria-label="Mateusz Zguda — home page"><img src="../../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a><div class="footer-links"><a class="easter-link" href="../../nofollow/" rel="nofollow" aria-label="Discover the secret" data-egg-state="hidden"></a><a href="../../#historie">All stories <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"></path></svg></a></div></footer>
+</body></html>
