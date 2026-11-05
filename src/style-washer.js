@@ -1,7 +1,8 @@
 import { t } from './i18n.js';
+import './chopin.css';
 
 const button = document.querySelector('.style-washer');
-const modes = ['invert', 'ornate', 'blue', 'mono-light', 'mono-dark', 'flashlight'];
+const modes = ['invert', 'ornate', 'blue', 'mono-light', 'mono-dark', 'flashlight', 'chopin'];
 const labels = {
   base: t('Styl podstawowy', 'Original style'),
   invert: t('Inwersja kolorów', 'Inverted colours'),
@@ -10,6 +11,7 @@ const labels = {
   'mono-light': t('Czerń na bieli', 'Black on white'),
   'mono-dark': t('Biel na czerni', 'White on black'),
   flashlight: t('Ciemna strona z latarką', 'Dark page with a flashlight'),
+  chopin: t('W czasach Chopina', 'In Chopin’s time'),
 };
 const storageKey = 'zguda-style-wash';
 function savedMode() {
