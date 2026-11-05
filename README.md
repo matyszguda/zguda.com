@@ -9,9 +9,17 @@ npm ci
 npm run dev -- --port 5173
 ```
 
-Budowanie: `npm run build`. Sprawdzenie wydania: `npm run preview -- --port 4173`.
+Budowanie: `npm run build`. Sprawdzenie wydania: `npm run preview -- --port 4173`. Testy: `npm test`.
 
 Treść strony: `index.html` i `historie/`; projekty: `src/main.js`; wygląd: `src/style.css`, `src/theme.css` i `src/canvas.css`.
+
+## Wersje językowe
+
+Polska wersja jest pod głównymi adresami, angielska pod `/en/`, wraz z trzema historiami i sekretnym backlogiem. Przełącznik PL/EN znajduje się po prawej stronie nagłówka i zachowuje podstronę oraz fragment adresu. `html lang`, metadane, opisy dostępności, formaty liczb i komunikaty interaktywne są lokalizowane. Podstrony mają odnośniki canonical/hreflang; backlog zachowuje `noindex,nofollow` w obu wersjach.
+
+Przy wejściu na polski adres główny język przeglądarki decyduje o wersji: języki słowiańskie pozostawiają polski, pozostałe wybierają angielski. Rozpoznawane są polski, czeski, słowacki, słoweński, chorwacki, bośniacki, serbski, macedoński, bułgarski, rosyjski, ukraiński, białoruski oraz regionalne i historyczne kody słowiańskie. Bezpośredni adres `/en/` pozostaje angielski, o ile nie zapisano innego ręcznego wyboru. Pierwszeństwo ma jawny parametr `?lang=pl/en`, następnie ręczna preferencja w `localStorage` (`zguda-language`), a dopiero potem wybór automatyczny. Zablokowany storage obsługiwany jest przez parametr języka przenoszony do wewnętrznych linków. Bez JavaScript obie statyczne wersje i przełącznik pozostają dostępne; automatyczny wybór wymaga JavaScript.
+
+Tłumaczenia treści statycznej: `src/i18n/*.en.json` (klucz to znormalizowany tekst polski). Po edycji tekstu aktualizuj odpowiadające tłumaczenie i uruchom `npm run locales:generate`; generator tworzy pięć angielskich stron oraz wspólne ustawienia języka w nagłówkach obu wersji. `npm run charts:generate` aktualizuje również wersje językowe. Build kontroluje kompletność tłumaczeń i zgodność wygenerowanych stron. Teksty interaktywne korzystają z `t()` / `currentLocale()` w `src/i18n.js`. Wczesny wybór wersji: `src/language-bootstrap.js`; przełącznik: `src/language-switcher.js` i `.css`. Generator działa także pod prefiksem projektu GitHub Pages i zachowuje wspólne pliki źródłowe, zdjęcia i logotypy.
 
 ## Stan redakcyjny
 

@@ -20,6 +20,7 @@ if (chart) {
   for (const year of years) {
     year.setAttribute('tabindex', '0');
     year.setAttribute('role', 'img');
+    // Titles come from the static page in its own language, including estimates.
     year.setAttribute('aria-label', year.querySelector('.chart-bar title').textContent);
     year.addEventListener('pointerenter', event => {
       if (event.pointerType === 'touch') return;

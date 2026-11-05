@@ -1,32 +1,33 @@
 import land from './map-land.json';
+import { t } from './i18n.js';
 const places = [
  ['Manhattan, New York','USA',-73.9712,40.7831,'us'],
  ['San Francisco','USA',-122.4194,37.7749,'us'],
  ['Philadelphia','USA',-75.1652,39.9526,'us'],
  ['Dayton, New Jersey','USA',-74.5102,40.3726,'us'],
  ['Brooklyn, New York','USA',-73.9442,40.6782,'us'],
- ['Dundee','Szkocja, Wielka Brytania',-2.9707,56.462,'europe'],
- ['Londyn','Wielka Brytania',-.1276,51.5072,'europe'],
+ ['Dundee',t('Szkocja, Wielka Brytania','Scotland, United Kingdom'),-2.9707,56.462,'europe'],
+ [t('Londyn','London'),t('Wielka Brytania','United Kingdom'),-.1276,51.5072,'europe'],
  ['Salzburg','Austria',13.055,47.8095,'europe'],
- ['Berlin','Niemcy',13.405,52.52,'europe'],
- ['Zurych','Szwajcaria',8.5417,47.3769,'europe'],
- ['Oslo','Norwegia',10.7522,59.9139,'europe'],
- ['Kraków','Polska',19.945,50.0647,'europe'],
- ['Warszawa','Polska',21.0122,52.2297,'europe'],
- ['Abu Dhabi','Zjednoczone Emiraty Arabskie',54.3773,24.4539,'gulf'],
+ ['Berlin',t('Niemcy','Germany'),13.405,52.52,'europe'],
+ [t('Zurych','Zurich'),t('Szwajcaria','Switzerland'),8.5417,47.3769,'europe'],
+ ['Oslo',t('Norwegia','Norway'),10.7522,59.9139,'europe'],
+ [t('Kraków','Krakow'),t('Polska','Poland'),19.945,50.0647,'europe'],
+ [t('Warszawa','Warsaw'),t('Polska','Poland'),21.0122,52.2297,'europe'],
+ ['Abu Dhabi',t('Zjednoczone Emiraty Arabskie','United Arab Emirates'),54.3773,24.4539,'gulf'],
  ['Tallinn','Estonia',24.7536,59.437,'europe'],
- ['Lublin','Polska',22.5684,51.2465,'europe'],
- ['Monachium','Niemcy',11.582,48.1351,'europe'],
- ['Mediolan','Włochy',9.19,45.4642,'europe'],
+ ['Lublin',t('Polska','Poland'),22.5684,51.2465,'europe'],
+ [t('Monachium','Munich'),t('Niemcy','Germany'),11.582,48.1351,'europe'],
+ [t('Mediolan','Milan'),t('Włochy','Italy'),9.19,45.4642,'europe'],
  ['Washington DC','USA',-77.0369,38.9072,'us'],
- ['Calgary','Kanada',-114.0719,51.0447,'us'],
- ['Dubaj','Zjednoczone Emiraty Arabskie',55.2708,25.2048,'gulf']
+ ['Calgary',t('Kanada','Canada'),-114.0719,51.0447,'us'],
+ [t('Dubaj','Dubai'),t('Zjednoczone Emiraty Arabskie','United Arab Emirates'),55.2708,25.2048,'gulf']
 ];
 const host=document.querySelector('#client-map');
 const project=(lon,lat)=>[(lon+130)*5,(70-lat)*7];
 // Draw Philadelphia last so its dot remains selectable in the East Coast cluster.
 const drawOrder=places.map((place,i)=>({place,i})).sort((a,b)=>(a.i===2)-(b.i===2));
-host.insertAdjacentHTML('afterbegin',`<svg viewBox="0 0 1000 370" tabindex="0" role="group" aria-labelledby="map-title" aria-describedby="map-help"><title id="map-title">Mapa lokalizacji klientów</title><path class="map-land" d="${land}"/>${drawOrder.map(({place:[city,,lon,lat],i})=>{const[x,y]=project(lon,lat);return `<circle class="map-point" data-point="${i}" cx="${x}" cy="${y}" r="3" role="button" tabindex="0" aria-label="${city}" aria-pressed="false"/>`}).join('')}</svg>`);
+host.insertAdjacentHTML('afterbegin',`<svg viewBox="0 0 1000 370" tabindex="0" role="group" aria-labelledby="map-title" aria-describedby="map-help"><title id="map-title">${t('Mapa lokalizacji klientów','Map of client locations')}</title><path class="map-land" d="${land}"/>${drawOrder.map(({place:[city,,lon,lat],i})=>{const[x,y]=project(lon,lat);return `<circle class="map-point" data-point="${i}" cx="${x}" cy="${y}" r="3" role="button" tabindex="0" aria-label="${city}" aria-pressed="false"/>`}).join('')}</svg>`);
 const svg=host.querySelector('svg');
 const label=document.querySelector('#map-city-name');
 let selected=null;

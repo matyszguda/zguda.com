@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#efe8e4">
+<title>Secret list of content to add later — Mateusz Zguda</title>
+<meta name="description" content="Ideas for stories and topics to add to the website later.">
+<link rel="stylesheet" href="../../src/style.css">
+<link rel="stylesheet" href="../../src/theme.css">
+<link rel="stylesheet" href="../../src/canvas.css">
+<link rel="stylesheet" href="../../src/nofollow.css">
+<!-- language-bootstrap:start --><meta name="site-root" content="../../"><link rel="canonical" href="https://zguda.com/en/nofollow/"><link rel="alternate" hreflang="pl" href="https://zguda.com/nofollow/"><link rel="alternate" hreflang="en" href="https://zguda.com/en/nofollow/"><link rel="alternate" hreflang="x-default" href="https://zguda.com/nofollow/"><script>// Embedded in the head by scripts/update-locales.mjs, before content is painted.
+(() => {
+  const rootMeta = document.querySelector('meta[name="site-root"]');
+  if (!rootMeta) return;
+  const current = new URL(window.location.href);
+  const root = new URL(rootMeta.content, current);
+  if (!current.pathname.startsWith(root.pathname)) return;
+  const relative = current.pathname.slice(root.pathname.length);
+  const englishPage = relative === 'en' || relative.startsWith('en/');
+  const pagePath = englishPage ? relative.replace(/^en\/?/, '') : relative;
+  const requested = current.searchParams.get('lang')?.toLowerCase();
+  const explicit = requested === 'en' || requested === 'pl' ? requested : null;
+  let saved = null;
+  try {
+    const value = window.localStorage.getItem('zguda-language');
+    if (value === 'en' || value === 'pl') saved = value;
+    if (explicit) {
+      window.localStorage.setItem('zguda-language', explicit);
+      if (window.localStorage.getItem('zguda-language') !== explicit) throw new Error('Storage unavailable');
+    }
+  } catch {
+    document.documentElement.dataset.languageStorage = 'unavailable';
+  }
+  const slavic = new Set([
+    'pl', 'cs', 'sk', 'sl', 'hr', 'bs', 'sr', 'mk', 'bg', 'ru', 'uk', 'be',
+    'sh', 'cnr', 'hsb', 'dsb', 'csb', 'szl', 'rue', 'cu',
+    'pol', 'ces', 'cze', 'slk', 'slo', 'slv', 'hrv', 'bos', 'srp', 'scc',
+    'scr', 'mkd', 'mac', 'bul', 'rus', 'ukr', 'bel', 'chu',
+  ]);
+  const primary = (window.navigator.languages?.[0] || window.navigator.language || 'en')
+    .toLowerCase().replace(/_/g, '-').split('-')[0];
+  const language = explicit || saved || (englishPage ? 'en' : slavic.has(primary) ? 'pl' : 'en');
+  const target = new URL((language === 'en' ? 'en/' : '') + pagePath, root);
+  target.search = current.search;
+  target.hash = current.hash;
+  if (target.pathname !== current.pathname) {
+    document.documentElement.style.visibility = 'hidden';
+    window.location.replace(target.href);
+  }
+})();</script><!-- language-bootstrap:end --></head>
+<body class="is-subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — home page"><img src="../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a>
+
+<nav id="site-nav" aria-label="Main menu"><a href="../#historie">All stories</a><a href="../#kontakt">Contact <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></nav><div class="header-tools"><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">＋</span></button><button class="style-washer" type="button" aria-label="Washing machine — pick a random style" aria-describedby="style-wash-help" title="Pick a random style. Click again to restore the original."><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1.5"></rect><path d="M4 7h16M10 4.5h4"></path><circle cx="7" cy="4.5" r=".6" fill="currentColor" stroke="none"></circle><g class="washer-drum"><circle cx="12" cy="14" r="5"></circle><path d="M7.5 14c1.5 2 3 2 4.5 0s3-2 4.5 0"></path></g></svg></button><span class="sr-only" id="style-wash-help">Clicks alternate between a random style and the original. Hold the button or Shift-click to restore the default style.</span><span class="sr-only style-wash-status" role="status" aria-live="polite"></span><a class="language-toggle" href="../../nofollow/?lang=pl" lang="pl" hreflang="pl" aria-label="Switch to Polish">PL</a></div>
+</header>
+<main id="main" class="story-page nofollow-page">
+<a class="text-link" href="../"><svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7"></path></svg> Back to the home page</a>
+<div class="eyebrow">nofollow</div>
+<h1>Secret list of content to add later.</h1>
+<p class="nofollow-intro">Ideas for stories to develop later.</p>
+<ol class="backlog-list" role="list">
+<li><div><h2>Language and its influence on behaviour</h2><p>“Odpowiedzialność” (“responsibility”) in Polish and English, <span lang="en">“I need to do some thinking”</span> and other examples.</p></div></li>
+<li><div><h2>The wildest projects at KISS</h2><p>A cover for a drinking glass, Versus Gaming, Facebook for farmers and other projects.</p></div></li>
+<li><div><h2>KISS: “Investing in the future”</h2><p>A week spent onboarding two young people.</p></div></li>
+<li><div><h2>Personal: my side gigs</h2><p>Dobra Faza, Aivola, singing songs over the phone, Strangeagreement Entertainment and websites I made as a kid.</p></div></li>
+<li><div><h2>Methadone Family</h2><p>Popławski, who used to close the window partway.</p></div></li>
+<li><div><h2>Krakówek</h2><p>A story about renting properties for the foundation. Every building has its own story.</p></div></li>
+<li><div><h2>Ciepło from the beginning</h2><p>A more detailed account of how the restaurant started.</p></div></li>
+<li><div><h2>What it means to “get a business going”</h2><p>A story about consistency and growth that is not visible at first. About the power of intentional action guided by direction and values, even without a very detailed plan. About how this brings both results and satisfaction.</p></div></li>
+<li><div><h2>A business based on data</h2><p>Only through a business in the physical world did I come to believe that basing a business on data is, first, effective and, second, need not mean “killing its spirit” or “destroying its brand”.</p></div></li><li><div><h2>What led to the creation of KISS</h2><p>The project for Super-Pharm, Adam’s proposal and Piotr’s investment, and a conversation with Maciek on a bus.</p></div></li><li><div><h2>Unsuccessful projects</h2><p>Aivola with Adam: the project’s story and why it failed. More than a year spent working for the startup Goodincare, also with an account of what went wrong and why. Dobra Faza: an interesting experiment, and the question of whether it can be called a failure at all.</p></div></li></ol>
+<a class="text-link" href="../#historie">Back to stories <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"></path></svg></a>
+</main>
+<footer><a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — home page"><img src="../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a><a href="../#historie">All stories <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"></path></svg></a></footer>
+<script type="module" src="../../src/navigation.js"></script>
+
+
+</body></html>

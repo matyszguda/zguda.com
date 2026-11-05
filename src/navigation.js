@@ -1,3 +1,4 @@
+import './language-switcher.js';
 import './style-washer.js';
 import './pointer-light.js';
 import './flashlight.js';

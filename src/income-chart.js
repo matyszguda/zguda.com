@@ -2,6 +2,7 @@ import './income-chart.css';
 import { chartTooltip } from './chart-tooltip.js';
 import records from './revenue-data.json';
 import { annualRevenue, breakdownTable, detailNote, formatMillions, hasBreakdown } from './revenue-format.js';
+import { t } from './i18n.js';
 
 const figure = document.querySelector('.income-chart');
 if (figure) {
@@ -10,7 +11,7 @@ if (figure) {
   const maximum = Math.max(...years.map(year => Number(year.dataset.mlnPln)));
   const chart = document.createElement('ol');
   chart.className = 'income-mobile-chart';
-  chart.setAttribute('aria-label', 'Roczne przychody KISS Digital i KISS Communications w mln PLN');
+  chart.setAttribute('aria-label', t('Roczne przychody KISS Digital i KISS Communications w mln PLN', 'Annual revenue of KISS Digital and KISS Communications in million PLN'));
 
   for (const year of years) {
     const row = document.createElement('li');
@@ -31,7 +32,7 @@ if (figure) {
     track.append(bar);
     const value = document.createElement('span');
     value.className = 'income-mobile-value';
-    value.textContent = year.querySelector('.chart-value').textContent;
+    value.textContent = formatMillions(annualRevenue(byYear.get(year.dataset.year)));
     button.append(label, track, value);
     row.append(button);
     chart.append(row);
@@ -49,12 +50,12 @@ if (figure) {
     id: 'income-tooltip',
     describe: trigger => {
       const record = byYear.get(trigger.dataset.year);
-      return `${record.year}: ${formatMillions(annualRevenue(record))} mln PLN przychodów. ${hasBreakdown(record) ? 'Pokaż podział i wynik netto.' : 'Pokaż łączny przychód. Podział i wynik netto są dostępne od 2017 roku.'}`;
+      return `${record.year}: ${formatMillions(annualRevenue(record))} ${t('mln PLN przychodów.', 'million PLN in revenue.')} ${hasBreakdown(record) ? t('Pokaż podział i wynik netto.', 'Show the company breakdown and net result.') : t('Pokaż łączny przychód. Podział i wynik netto są dostępne od 2017 roku.', 'Show total revenue. Company breakdowns and net results are available from 2017.')}`;
     },
     render: trigger => {
       const record = byYear.get(trigger.dataset.year);
       const total = annualRevenue(record);
-      return `<div class="income-tooltip-heading"><span>Rok ${record.year}</span><strong>${formatMillions(total)} <small>mln PLN</small></strong></div>${breakdownTable(record)}<p>${detailNote(record)}${record.year === 2022 ? '<br>1 kw. 2022 · Sprzedaż do THG. Dane za cały rok.' : ''}</p>`;
+      return `<div class="income-tooltip-heading"><span>${t('Rok', 'Year')} ${record.year}</span><strong>${formatMillions(total)} <small>${t('mln PLN', 'million PLN')}</small></strong></div>${breakdownTable(record)}<p>${detailNote(record)}${record.year === 2022 ? t('<br>1 kw. 2022 · Sprzedaż do THG. Dane za cały rok.', '<br>Q1 2022 · Sold to THG. Full-year figures.') : ''}</p>`;
     },
   });
 }

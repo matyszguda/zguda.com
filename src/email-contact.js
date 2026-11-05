@@ -1,3 +1,5 @@
+import { t } from './i18n.js';
+
 const reveal=document.querySelector('#email-reveal');
 const container=document.querySelector('#email-address');
 const address=document.querySelector('#email-step');
@@ -16,9 +18,9 @@ async function copyEmail(){
  status.textContent='';
  try{
   await navigator.clipboard.writeText(email);
-  status.textContent='Adres skopiowany.';
+  status.textContent=t('Adres skopiowany.','Email address copied.');
  }catch{
-  status.textContent='Nie udało się skopiować. Zaznacz adres i skopiuj go ręcznie.';
+  status.textContent=t('Nie udało się skopiować. Zaznacz adres i skopiuj go ręcznie.','Could not copy the address. Select it and copy it manually.');
  }
 }
 address.addEventListener('click',copyEmail);

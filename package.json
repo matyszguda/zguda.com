@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "test": "node --test",
     "test:counter": "node --test tests/cieplo-counter.test.js",
-    "charts:generate": "node scripts/update-revenue-chart.mjs && node scripts/update-steady-chart.mjs",
+    "test:language": "node --test tests/language-bootstrap.test.js",
+    "locales:generate": "node scripts/update-locales.mjs",
+    "locales:check": "node scripts/update-locales.mjs --check",
+    "charts:generate": "node scripts/update-revenue-chart.mjs && node scripts/update-steady-chart.mjs && npm run locales:generate",
     "charts:check": "node scripts/update-revenue-chart.mjs --check && node scripts/update-steady-chart.mjs --check",
-    "build": "npm run charts:check && vite build --base=./",
+    "build": "npm run charts:check && npm run locales:check && vite build --base=./",
     "preview": "vite preview --host 0.0.0.0"
   },
   "devDependencies": {
+    "parse5": "^8.1.0",
     "vite": "^7.2.0"
   }
 }

@@ -1,9 +1,10 @@
 import './secret-egg.css';
+import { t } from './i18n.js';
 
 for (const [index, link] of [...document.querySelectorAll('a.easter-link')].entries()) {
   link.classList.add('secret-trigger');
   link.dataset.eggState = 'hidden';
-  link.setAttribute('aria-label', 'Odkryj sekret');
+  link.setAttribute('aria-label', t('Odkryj sekret', 'Discover a secret'));
   link.setAttribute('aria-expanded', 'false');
   link.removeAttribute('title');
   // Keep the destination a real link. Only its first activation reveals the egg.
@@ -14,7 +15,7 @@ for (const [index, link] of [...document.querySelectorAll('a.easter-link')].entr
     if (link.dataset.eggState === 'revealed') return;
     event.preventDefault();
     link.dataset.eggState = 'revealed';
-    link.setAttribute('aria-label', 'Otwórz sekretną listę');
+    link.setAttribute('aria-label', t('Otwórz sekretną listę', 'Open the secret list'));
     link.setAttribute('aria-expanded', 'true');
   }
   link.addEventListener('click', reveal);
@@ -24,7 +25,7 @@ for (const [index, link] of [...document.querySelectorAll('a.easter-link')].entr
   addEventListener('pageshow', event => {
     if (!event.persisted) return;
     link.dataset.eggState = 'hidden';
-    link.setAttribute('aria-label', 'Odkryj sekret');
+    link.setAttribute('aria-label', t('Odkryj sekret', 'Discover a secret'));
     link.setAttribute('aria-expanded', 'false');
   });
 }

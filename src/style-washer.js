@@ -1,13 +1,15 @@
+import { t } from './i18n.js';
+
 const button = document.querySelector('.style-washer');
 const modes = ['invert', 'ornate', 'blue', 'mono-light', 'mono-dark', 'flashlight'];
 const labels = {
-  base: 'Styl podstawowy',
-  invert: 'Inwersja kolorów',
-  ornate: 'Krój szeryfowy i ozdobny',
-  blue: 'Błękit zamiast czerwieni',
-  'mono-light': 'Czerń na bieli',
-  'mono-dark': 'Biel na czerni',
-  flashlight: 'Ciemna strona z latarką',
+  base: t('Styl podstawowy', 'Original style'),
+  invert: t('Inwersja kolorów', 'Inverted colours'),
+  ornate: t('Krój szeryfowy i ozdobny', 'Decorative serif type'),
+  blue: t('Błękit zamiast czerwieni', 'Blue instead of red'),
+  'mono-light': t('Czerń na bieli', 'Black on white'),
+  'mono-dark': t('Biel na czerni', 'White on black'),
+  flashlight: t('Ciemna strona z latarką', 'Dark page with a flashlight'),
 };
 const storageKey = 'zguda-style-wash';
 function savedMode() {
@@ -32,10 +34,10 @@ if (button) {
       } catch { /* Appearance controls also work without browser storage. */ }
     }
     const label = labels[mode];
-    const action = mode === 'base' ? 'Wylosuj alternatywny styl' : 'Przywróć oryginalny styl';
-    button.setAttribute('aria-label', `Pralka — ${action.toLowerCase()}. Aktualnie: ${label}.`);
+    const action = mode === 'base' ? t('Wylosuj alternatywny styl', 'Choose a random style') : t('Przywróć oryginalny styl', 'Restore the original style');
+    button.setAttribute('aria-label', t(`Pralka — ${action.toLowerCase()}. Aktualnie: ${label}.`, `Washing machine — ${action.toLowerCase()}. Current style: ${label}.`));
     button.setAttribute('aria-pressed', String(mode !== 'base'));
-    button.title = `${label}. ${action}. Przytrzymaj, by przywrócić podstawowy.`;
+    button.title = t(`${label}. ${action}. Przytrzymaj, by przywrócić podstawowy.`, `${label}. ${action}. Press and hold to restore the original.`);
     if (announce && status) status.textContent = label;
     const theme = document.querySelector('meta[name="theme-color"]');
     if (theme) {
