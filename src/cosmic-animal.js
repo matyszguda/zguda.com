@@ -12,19 +12,20 @@ let animation;
 let timer;
 let active = false;
 let previousEdge = -1;
+let fadeOnExit = true;
 
 function createScene() {
   orbits = document.createElement('div');
   orbits.className = 'cosmic-orbits';
   orbits.setAttribute('aria-hidden', 'true');
   const positions = [
-    [-8, 5, 'clamp(180px,28vw,420px)', .45, 51, -13, 78, 55, 'soft'],
-    [80, 22, 'clamp(140px,24vw,360px)', .48, 43, -26, -65, 80, ''],
-    [12, 68, 'clamp(65px,10vw,140px)', .55, 37, -9, 60, -70, 'ringed'],
-    [62, 75, 'clamp(100px,16vw,230px)', .35, 57, -33, -85, -45, 'soft'],
-    [49, -6, 'clamp(38px,6vw,85px)', .5, 32, -18, -45, 65, ''],
-    [37, 46, 'clamp(45px,7vw,100px)', .28, 46, -5, 70, 50, 'soft'],
-    [92, 82, 'clamp(32px,5vw,68px)', .6, 34, -21, -48, -45, ''],
+    [-8, 5, 'clamp(180px,28vw,420px)', .45, 30, -13, 110, 80, 'soft'],
+    [80, 22, 'clamp(140px,24vw,360px)', .48, 26, -16, -95, 110, ''],
+    [12, 68, 'clamp(65px,10vw,140px)', .55, 23, -9, 85, -100, 'ringed'],
+    [62, 75, 'clamp(100px,16vw,230px)', .35, 34, -23, -120, -65, 'soft'],
+    [49, -6, 'clamp(38px,6vw,85px)', .5, 21, -18, -65, 90, ''],
+    [37, 46, 'clamp(45px,7vw,100px)', .28, 28, -5, 100, 75, 'soft'],
+    [92, 82, 'clamp(32px,5vw,68px)', .6, 22, -11, -70, -65, ''],
   ];
   for (const [x, y, size, opacity, duration, delay, dx, dy, style] of positions) {
     const orb = document.createElement('span');
@@ -48,7 +49,10 @@ function createScene() {
   motion.append(image);
   deer.append(motion);
   peekLayer.append(deer);
-  document.body.append(orbits, peekLayer);
+  document.body.append(orbits);
+  // The header's isolated stacking context puts the deer above its paper
+  // background while keeping navigation and controls in front of the artwork.
+  (document.querySelector('header') ?? document.body).append(peekLayer);
 }
 
 function stopPeek() {
@@ -76,12 +80,15 @@ function peek() {
   const axis = horizontal ? 'X' : 'Y';
   const hidden = `translate${axis}(${sign * 108}%) rotate(${sign * 9}deg)`;
   const visible = `translate${axis}(${sign * 17}%) rotate(${sign * -3}deg)`;
+  const fading = fadeOnExit;
+  fadeOnExit = !fadeOnExit;
+  const softMotion = 'cubic-bezier(.45,0,.2,1)';
   animation = motion.animate([
-    { offset: 0, transform: hidden, opacity: 0 },
-    { offset: .24, transform: visible, opacity: 1 },
-    { offset: .67, transform: visible, opacity: 1 },
-    { offset: 1, transform: hidden, opacity: 0 },
-  ], { duration: 3400, easing: 'cubic-bezier(.42,0,.18,1)', fill: 'both' });
+    { offset: 0, transform: hidden, opacity: 0, easing: softMotion },
+    { offset: .34, transform: visible, opacity: 1, easing: 'linear' },
+    { offset: .66, transform: visible, opacity: 1, easing: fading ? 'ease-in-out' : softMotion },
+    { offset: 1, transform: fading ? visible : hidden, opacity: fading ? 0 : 1 },
+  ], { duration: 4400, easing: 'linear', fill: 'both' });
   animation.onfinish = () => {
     animation?.cancel();
     animation = null;

@@ -26,6 +26,7 @@ html[data-wash="cosmic-animal"] body{isolation:isolate}
  80%{transform:translate3d(calc(var(--orb-x,50px) * -.8),calc(var(--orb-y,35px) * -.35),0) scale(1.02)}
 }
 .cosmic-peek-layer{z-index:20}
+header .cosmic-peek-layer{z-index:-1}
 .cosmic-deer{position:absolute;width:clamp(180px,20vw,270px);aspect-ratio:260/283.46;pointer-events:none}
 .cosmic-deer[data-edge="left"]{left:0;top:var(--peek-position);transform:translateY(-50%)}
 .cosmic-deer[data-edge="right"]{right:0;top:var(--peek-position);transform:translateY(-50%)}
