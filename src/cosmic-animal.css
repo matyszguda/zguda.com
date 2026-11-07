@@ -3,9 +3,9 @@ html[data-wash="cosmic-animal"]{
  --interaction:#332956;--line:#c4badb;--tint:#dfd6ee;--chart-ink:#332956;
 }
 html[data-wash="cosmic-animal"] body{isolation:isolate}
-.cosmic-orbits,.cosmic-peek-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;contain:strict}
+.cosmic-orbits,.cosmic-peek-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none}
 .cosmic-orbits[hidden],.cosmic-peek-layer[hidden]{display:none}
-.cosmic-orbits{z-index:-1}
+.cosmic-orbits{z-index:-1;contain:strict}
 .cosmic-orb{
  position:absolute;width:var(--orb-size);height:var(--orb-size);border-radius:50%;
  background:radial-gradient(circle at 30% 25%,#d8f4e4,#a1debc 70%,#92d3b4);
@@ -25,24 +25,27 @@ html[data-wash="cosmic-animal"] body{isolation:isolate}
  55%{transform:translate3d(calc(var(--orb-x,50px) * -.45),var(--orb-y,35px),0) scale(.98)}
  80%{transform:translate3d(calc(var(--orb-x,50px) * -.8),calc(var(--orb-y,35px) * -.35),0) scale(1.02)}
 }
-.cosmic-peek-layer{z-index:20}
-header .cosmic-peek-layer{z-index:-1}
-.cosmic-deer{position:absolute;width:clamp(180px,20vw,270px);aspect-ratio:260/283.46;pointer-events:none}
+/* Positive layers avoid a negative composited fixed child in Safari's sticky header. */
+.cosmic-peek-layer{z-index:1}
+html[data-wash="cosmic-animal"] header > .site-wordmark,
+html[data-wash="cosmic-animal"] header > nav,
+html[data-wash="cosmic-animal"] header > .header-tools{position:relative;z-index:2}
+.cosmic-deer{--deer-size:clamp(180px,20vw,270px);position:absolute;width:var(--deer-size);height:calc(var(--deer-size) * 1.09023);pointer-events:none}
 .cosmic-deer[data-edge="left"]{left:0;top:var(--peek-position);transform:translateY(-50%)}
 .cosmic-deer[data-edge="right"]{right:0;top:var(--peek-position);transform:translateY(-50%)}
 .cosmic-deer[data-edge="top"]{top:0;left:var(--peek-position);transform:translateX(-50%)}
 .cosmic-deer[data-edge="bottom"]{bottom:0;left:var(--peek-position);transform:translateX(-50%)}
-.cosmic-deer-motion{width:100%;height:100%;opacity:0;will-change:transform,opacity}
+.cosmic-deer-motion{position:absolute;inset:0;opacity:0;will-change:transform,opacity}
 .cosmic-deer img{display:block;width:100%;height:100%;pointer-events:none}
 /* Point the cropped neck towards its edge so it stays outside the viewport. */
 .cosmic-deer[data-edge="left"] img{transform:rotate(90deg)}
 .cosmic-deer[data-edge="right"] img{transform:rotate(-90deg) scaleX(-1)}
 .cosmic-deer[data-edge="top"] img{transform:rotate(180deg)}
 @media(max-width:760px){
- .cosmic-deer{width:clamp(125px,35vw,180px)}
+ .cosmic-deer{--deer-size:clamp(125px,35vw,180px)}
  .cosmic-orb:nth-child(n+6){display:none}
 }
 @media(prefers-reduced-motion:reduce){
  .cosmic-orb{animation:none;will-change:auto}
- .cosmic-peek-layer{display:none}
+ .cosmic-deer-motion{will-change:opacity}
 }

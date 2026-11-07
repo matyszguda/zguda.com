@@ -63,12 +63,12 @@ function stopPeek() {
 }
 
 function schedulePeek(delay = 4800 + Math.random() * 4300) {
-  if (active && !document.hidden && !reducedMotion.matches) timer = setTimeout(peek, delay);
+  if (active && !document.hidden) timer = setTimeout(peek, delay);
 }
 
 function peek() {
   timer = null;
-  if (!active || document.hidden || reducedMotion.matches) return;
+  if (!active || document.hidden) return;
   const edgeIndex = (previousEdge + 1 + Math.floor(Math.random() * 3)) % edges.length;
   previousEdge = edgeIndex;
   const edge = edges[edgeIndex];
@@ -80,11 +80,14 @@ function peek() {
   const axis = horizontal ? 'X' : 'Y';
   const hidden = `translate${axis}(${sign * 108}%) rotate(${sign * 9}deg)`;
   const visible = `translate${axis}(${sign * 17}%) rotate(${sign * -3}deg)`;
-  const fading = fadeOnExit;
+  // Reduce Motion keeps the character visible through a stationary fade,
+  // rather than removing it altogether or moving it across the viewport.
+  const reduced = reducedMotion.matches;
+  const fading = fadeOnExit || reduced;
   fadeOnExit = !fadeOnExit;
   const softMotion = 'cubic-bezier(.45,0,.2,1)';
   animation = motion.animate([
-    { offset: 0, transform: hidden, opacity: 0, easing: softMotion },
+    { offset: 0, transform: reduced ? visible : hidden, opacity: 0, easing: softMotion },
     { offset: .34, transform: visible, opacity: 1, easing: 'linear' },
     { offset: .66, transform: visible, opacity: 1, easing: fading ? 'ease-in-out' : softMotion },
     { offset: 1, transform: fading ? visible : hidden, opacity: fading ? 0 : 1 },
@@ -108,7 +111,7 @@ function syncScene() {
   if (!orbits) createScene();
   orbits.hidden = peekLayer.hidden = false;
   orbits.classList.toggle('is-paused', document.hidden);
-  if (!document.hidden && !reducedMotion.matches) schedulePeek(entering ? 1000 : 1800);
+  if (!document.hidden) schedulePeek(entering ? 1000 : 1800);
 }
 
 new MutationObserver(syncScene).observe(root, { attributes: true, attributeFilter: ['data-wash'] });
