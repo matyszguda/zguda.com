@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy — Mateusz Zguda</title>
+<meta name="description" content="How zguda.com uses analytics, cookies and technical data, and how to change your settings.">
+<meta name="theme-color" content="#efe8e4">
+<!-- language-bootstrap:start --><meta name="site-root" content="../../"><link rel="canonical" href="https://zguda.com/en/polityka-prywatnosci/"><link rel="alternate" hreflang="pl" href="https://zguda.com/polityka-prywatnosci/"><link rel="alternate" hreflang="en" href="https://zguda.com/en/polityka-prywatnosci/"><link rel="alternate" hreflang="x-default" href="https://zguda.com/polityka-prywatnosci/"><script>// Embedded in the head by scripts/update-locales.mjs, before content is painted.
+(() => {
+  const rootMeta = document.querySelector('meta[name="site-root"]');
+  if (!rootMeta) return;
+  const current = new URL(window.location.href);
+  const root = new URL(rootMeta.content, current);
+  if (!current.pathname.startsWith(root.pathname)) return;
+  const relative = current.pathname.slice(root.pathname.length);
+  const englishPage = relative === 'en' || relative.startsWith('en/');
+  const pagePath = englishPage ? relative.replace(/^en\/?/, '') : relative;
+  const requested = current.searchParams.get('lang')?.toLowerCase();
+  const explicit = requested === 'en' || requested === 'pl' ? requested : null;
+  let saved = null;
+  try {
+    const value = window.localStorage.getItem('zguda-language');
+    if (value === 'en' || value === 'pl') saved = value;
+    if (explicit) {
+      window.localStorage.setItem('zguda-language', explicit);
+      if (window.localStorage.getItem('zguda-language') !== explicit) throw new Error('Storage unavailable');
+    }
+  } catch {
+    document.documentElement.dataset.languageStorage = 'unavailable';
+  }
+  const slavic = new Set([
+    'pl', 'cs', 'sk', 'sl', 'hr', 'bs', 'sr', 'mk', 'bg', 'ru', 'uk', 'be',
+    'sh', 'cnr', 'hsb', 'dsb', 'csb', 'szl', 'rue', 'cu',
+    'pol', 'ces', 'cze', 'slk', 'slo', 'slv', 'hrv', 'bos', 'srp', 'scc',
+    'scr', 'mkd', 'mac', 'bul', 'rus', 'ukr', 'bel', 'chu',
+  ]);
+  const primary = (window.navigator.languages?.[0] || window.navigator.language || 'en')
+    .toLowerCase().replace(/_/g, '-').split('-')[0];
+  const language = explicit || saved || (englishPage ? 'en' : slavic.has(primary) ? 'pl' : 'en');
+  const target = new URL((language === 'en' ? 'en/' : '') + pagePath, root);
+  target.search = current.search;
+  target.hash = current.hash;
+  if (target.pathname !== current.pathname) {
+    document.documentElement.style.visibility = 'hidden';
+    window.location.replace(target.href);
+  }
+})();</script><!-- language-bootstrap:end -->  <script type="module" crossorigin src="../../assets/navigation-f4yM4NIG.js"></script>
+  <link rel="stylesheet" crossorigin href="../../assets/navigation-D2TfgfCF.css">
+</head>
+<body class="is-subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — home page"><img src="../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a>
+
+<nav id="site-nav" aria-label="Main menu"><a href="../#historie">All stories</a><a href="../#kontakt">Contact <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></nav><div class="header-tools"><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">＋</span></button><button class="style-washer" type="button" aria-label="Washing machine — pick a random style" aria-describedby="style-wash-help" title="Pick a random style. Click again to restore the original."><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1.5"></rect><path d="M4 7h16M10 4.5h4"></path><circle cx="7" cy="4.5" r=".6" fill="currentColor" stroke="none"></circle><g class="washer-drum"><circle cx="12" cy="14" r="5"></circle><path d="M7.5 14c1.5 2 3 2 4.5 0s3-2 4.5 0"></path></g></svg></button><span class="sr-only" id="style-wash-help">Clicks alternate between a random style and the original. Hold the button or Shift-click to restore the default style.</span><span class="sr-only style-wash-status" role="status" aria-live="polite"></span><a class="language-toggle" href="../../polityka-prywatnosci/?lang=pl" lang="pl" hreflang="pl" aria-label="Switch to Polish">PL</a></div>
+</header>
+<main id="main" class="story-page privacy-page">
+<a class="text-link" href="../"><svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7"></path></svg> Back to the home page</a>
+<h1>Privacy policy</h1>
+<p class="story-page-lead">Last updated: 8 November 2026.</p>
+<article class="story-prose">
+<section>
+<h2>Controller and contact</h2>
+<p>The data controller is Mateusz Zguda, who runs zguda.com. For privacy enquiries, please use the <a href="../#kontakt">contact details on the website</a>.</p>
+</section>
+<section>
+<h2>Analytics</h2>
+<p>The website uses Google Analytics 4, provided by Google Ireland Limited. I analyse visits to public pages, traffic sources and information about browsers, devices and approximate locations to improve the website. Measurement uses cookie identifiers and technical connection data. According to Google, IP addresses in GA4 are used to determine location and are not stored in full.</p>
+<p>The _ga and _ga_787SY0YXF7 cookies are set to expire after 180 days. Google Signals and advertising personalisation are disabled. Page-view measurement receives URLs without query parameters or fragments.</p>
+</section>
+<section data-analytics-preferences="">
+<h2>Your choice</h2>
+<p>Analytics is enabled by default. You can turn it off here. I will remember your choice for 180 days.</p>
+<p><label for="analytics-enabled"><input type="checkbox" id="analytics-enabled" checked="" disabled=""> Website analytics</label></p>
+<p id="analytics-preference-status" role="status" aria-live="polite"></p><noscript>Analytics does not run when JavaScript is disabled.</noscript>
+</section>
+<section>
+<h2>Browser settings</h2>
+<p>The website stores your selected language in the browser, and the style you select with the washing machine for the current tab. You can delete cookies and website data in your browser settings.</p>
+</section>
+<section>
+<h2>Hosting, fonts and data recipients</h2>
+<p>The website is hosted on GitHub Pages, and its fonts are provided by Google Fonts. These providers receive the technical data needed to handle requests, including your IP address. Data may be processed outside the European Economic Area under the transfer mechanisms used by those providers.</p>
+<p>More information: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub’s privacy statement</a>.</p>
+</section>
+<section>
+<h2>Contact and your rights</h2>
+<p>The site does not have a contact form. If you contact me by email or LinkedIn, correspondence data is processed to handle your enquiry; external services apply their own privacy policies.</p>
+<p>You may request access to, correction or deletion of your data, restriction of processing, or object to processing. The scope of these rights depends on the basis and purpose of processing. You also have the right to lodge a complaint with the <a href="https://uodo.gov.pl/" target="_blank" rel="noopener noreferrer">President of Poland’s Personal Data Protection Office</a>.</p>
+</section>
+</article>
+</main>
+<footer><a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — home page"><img src="../../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a><div class="footer-links"><a class="easter-link" href="../nofollow/" rel="nofollow" aria-label="Discover the secret" data-egg-state="hidden"></a><a href="../#historie">All stories <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"></path></svg></a><a class="privacy-link" href="./">Privacy policy</a></div></footer>
+</body></html>
