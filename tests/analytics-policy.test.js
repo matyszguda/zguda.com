@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { PREFERENCE_LIFETIME, analyticsAllowed, analyticsEnabled, analyticsPreferenceRecord, analyticsURL, parseAnalyticsPreference } from '../src/analytics-policy.js';
+import { PREFERENCE_LIFETIME, analyticsAllowed, analyticsEnabled, analyticsPreferenceRecord, analyticsScriptURL, analyticsURL, parseAnalyticsPreference } from '../src/analytics-policy.js';
+
+test('the installed Google tag keeps its own identity while GA4 keeps its measurement ID', () => {
+  assert.equal(analyticsScriptURL('G-787SY0YXF7', 'GTM-P4CJBB6B'), 'https://www.googletagmanager.com/gtm.js?id=GTM-P4CJBB6B');
+  assert.equal(analyticsScriptURL('G-787SY0YXF7'), 'https://www.googletagmanager.com/gtag/js?id=G-787SY0YXF7');
+  assert.equal(analyticsScriptURL('G-787SY0YXF7', 'GTM-P4CJBB6B&extra=1'), 'https://www.googletagmanager.com/gtag/js?id=G-787SY0YXF7');
+  assert.equal(analyticsScriptURL('GTM-P4CJBB6B', 'GTM-P4CJBB6B'), '');
+});
 
 test('analytics requires a configured ID and the public site, excluding secret and redirecting pages', () => {
   const page = { measurementId: 'G-ABC1234567', hostname: 'zguda.com', pathname: '/', allowedHosts: ['zguda.com'] };

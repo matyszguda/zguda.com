@@ -1,6 +1,6 @@
 import config from './analytics-config.json';
 import { t } from './i18n.js';
-import { PREFERENCE_KEY, analyticsAllowed, analyticsEnabled, analyticsPreferenceRecord, analyticsURL } from './analytics-policy.js';
+import { PREFERENCE_KEY, analyticsAllowed, analyticsEnabled, analyticsPreferenceRecord, analyticsScriptURL, analyticsURL } from './analytics-policy.js';
 
 const measurementId = typeof config.measurementId === 'string' ? config.measurementId.trim() : '';
 const robots = document.querySelector('meta[name="robots"]')?.content || '';
@@ -83,7 +83,7 @@ function enableAnalytics() {
   pageView();
   const script = document.createElement('script');
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  script.src = analyticsScriptURL(measurementId, config.googleTagId);
   script.dataset.analytics = 'ga4';
   document.head.append(script);
 }

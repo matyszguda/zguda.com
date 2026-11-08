@@ -30,6 +30,14 @@ export function analyticsAllowed({ measurementId, hostname, pathname, robots = '
     && !/\bnoindex\b/i.test(robots) && !redirecting;
 }
 
+export function analyticsScriptURL(measurementId, googleTagId = '') {
+  if (!/^G-[A-Z0-9]{6,20}$/.test(measurementId)) return '';
+  if (/^GTM-[A-Z0-9]{6,20}$/.test(googleTagId)) {
+    return `https://www.googletagmanager.com/gtm.js?id=${googleTagId}`;
+  }
+  return `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+}
+
 // Never send query strings, fragments, credentials or the secret backlog URL.
 export function analyticsURL(value) {
   try {
