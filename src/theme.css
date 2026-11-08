@@ -61,7 +61,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--i
 .contact.has-photo h2{font-size:clamp(42px,5vw,76px)}
 .contact-photo{margin:0;max-width:420px;justify-self:end}
 .contact-photo img{display:block;width:100%;height:auto}
-footer .footer-links{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+footer .footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:14px;position:relative;z-index:1}
 footer .footer-links>a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:11px}
 footer .footer-links .easter-link{min-width:44px;text-decoration:none}
 /* Flat Swiss-style editorial grid. */
@@ -133,3 +133,9 @@ html[data-wash="mono-dark"] .site-wordmark img{filter:grayscale(1) invert(1)}
  .ventures .venture,.ventures .venture:hover,.ventures .venture:focus-within{transform:none!important;transition:none!important}
  .style-washer.is-washing .washer-drum{animation:none}
 }
+
+[data-analytics-preferences]{padding:20px;border:1px solid var(--line);background:var(--tint)}
+[data-analytics-preferences] label{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer}
+#analytics-enabled{width:20px;height:20px;flex-shrink:0;margin:0;accent-color:var(--primary)}
+#analytics-enabled:focus-visible{outline:2px solid var(--interaction);outline-offset:4px}
+#analytics-preference-status{margin:8px 0 0;font-size:14px;color:var(--muted)}

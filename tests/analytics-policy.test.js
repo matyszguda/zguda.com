@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { CONSENT_LIFETIME, analyticsAllowed, analyticsURL, consentRecord, parseConsent } from '../src/analytics-policy.js';
+import { PREFERENCE_LIFETIME, analyticsAllowed, analyticsEnabled, analyticsPreferenceRecord, analyticsURL, parseAnalyticsPreference } from '../src/analytics-policy.js';
 
 test('analytics requires a configured ID and the public site, excluding secret and redirecting pages', () => {
   const page = { measurementId: 'G-ABC1234567', hostname: 'zguda.com', pathname: '/', allowedHosts: ['zguda.com'] };
@@ -14,14 +14,17 @@ test('analytics requires a configured ID and the public site, excluding secret a
   ]) assert.equal(analyticsAllowed({ ...page, ...change }), false, JSON.stringify(change));
 });
 
-test('consent is explicit, versioned and expires instead of silently renewing', () => {
+test('analytics defaults on while retaining existing explicit opt-outs for 180 days', () => {
   const now = Date.UTC(2026, 10, 7);
-  assert.equal(parseConsent(consentRecord('granted', now), now + 1), 'granted');
-  assert.equal(parseConsent(consentRecord('denied', now), now + 1), 'denied');
-  assert.equal(parseConsent(consentRecord('granted', now), now + CONSENT_LIFETIME), null);
-  assert.equal(parseConsent(consentRecord('granted', now + 1), now), null);
+  assert.equal(analyticsEnabled(null, now), true);
+  assert.equal(analyticsEnabled(analyticsPreferenceRecord(true, now), now + 1), true);
+  assert.equal(analyticsEnabled(analyticsPreferenceRecord(false, now), now + 1), false);
+  assert.equal(analyticsEnabled(JSON.stringify({ version: 1, choice: 'denied', updatedAt: now }), now + 1), false);
+  assert.equal(parseAnalyticsPreference(analyticsPreferenceRecord(false, now), now + PREFERENCE_LIFETIME), null);
+  assert.equal(analyticsEnabled(analyticsPreferenceRecord(false, now), now + PREFERENCE_LIFETIME), true);
+  assert.equal(parseAnalyticsPreference(analyticsPreferenceRecord(true, now + 1), now), null);
   for (const value of [null, '', 'granted', '{}', '{"choice":"granted"}', '{"version":1,"choice":"granted","updatedAt":"today"}']) {
-    assert.equal(parseConsent(value, now), null);
+    assert.equal(parseAnalyticsPreference(value, now), null);
   }
 });
 

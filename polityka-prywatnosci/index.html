@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polityka prywatności — Mateusz Zguda</title>
+<meta name="description" content="Jak zguda.com korzysta z analityki, cookies i danych technicznych oraz jak zmienić swoje ustawienia.">
+<meta name="theme-color" content="#efe8e4">
+<link rel="stylesheet" href="../src/style.css"><link rel="stylesheet" href="../src/theme.css"><link rel="stylesheet" href="../src/canvas.css">
+<!-- language-bootstrap:start --><meta name="site-root" content="../"><link rel="canonical" href="https://zguda.com/polityka-prywatnosci/"><link rel="alternate" hreflang="pl" href="https://zguda.com/polityka-prywatnosci/"><link rel="alternate" hreflang="en" href="https://zguda.com/en/polityka-prywatnosci/"><link rel="alternate" hreflang="x-default" href="https://zguda.com/polityka-prywatnosci/"><script>// Embedded in the head by scripts/update-locales.mjs, before content is painted.
+(() => {
+  const rootMeta = document.querySelector('meta[name="site-root"]');
+  if (!rootMeta) return;
+  const current = new URL(window.location.href);
+  const root = new URL(rootMeta.content, current);
+  if (!current.pathname.startsWith(root.pathname)) return;
+  const relative = current.pathname.slice(root.pathname.length);
+  const englishPage = relative === 'en' || relative.startsWith('en/');
+  const pagePath = englishPage ? relative.replace(/^en\/?/, '') : relative;
+  const requested = current.searchParams.get('lang')?.toLowerCase();
+  const explicit = requested === 'en' || requested === 'pl' ? requested : null;
+  let saved = null;
+  try {
+    const value = window.localStorage.getItem('zguda-language');
+    if (value === 'en' || value === 'pl') saved = value;
+    if (explicit) {
+      window.localStorage.setItem('zguda-language', explicit);
+      if (window.localStorage.getItem('zguda-language') !== explicit) throw new Error('Storage unavailable');
+    }
+  } catch {
+    document.documentElement.dataset.languageStorage = 'unavailable';
+  }
+  const slavic = new Set([
+    'pl', 'cs', 'sk', 'sl', 'hr', 'bs', 'sr', 'mk', 'bg', 'ru', 'uk', 'be',
+    'sh', 'cnr', 'hsb', 'dsb', 'csb', 'szl', 'rue', 'cu',
+    'pol', 'ces', 'cze', 'slk', 'slo', 'slv', 'hrv', 'bos', 'srp', 'scc',
+    'scr', 'mkd', 'mac', 'bul', 'rus', 'ukr', 'bel', 'chu',
+  ]);
+  const primary = (window.navigator.languages?.[0] || window.navigator.language || 'en')
+    .toLowerCase().replace(/_/g, '-').split('-')[0];
+  const language = explicit || saved || (englishPage ? 'en' : slavic.has(primary) ? 'pl' : 'en');
+  const target = new URL((language === 'en' ? 'en/' : '') + pagePath, root);
+  target.search = current.search;
+  target.hash = current.hash;
+  if (target.pathname !== current.pathname) {
+    document.documentElement.style.visibility = 'hidden';
+    window.location.replace(target.href);
+  }
+})();</script><!-- language-bootstrap:end --></head>
+<body class="is-subpage">
+<a class="skip" href="#main">Przejdź do treści</a>
+<header>
+<a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — strona główna"><img src="../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a>
+
+<nav id="site-nav" aria-label="Menu główne"><a href="../#historie">Wszystkie historie</a><a href="../#kontakt">Kontakt <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><div class="header-tools"><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">＋</span></button><button class="style-washer" type="button" aria-label="Pralka — wylosuj alternatywny styl" aria-describedby="style-wash-help" title="Wylosuj alternatywny styl. Kolejne kliknięcie przywraca oryginalny."><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1.5"/><path d="M4 7h16M10 4.5h4"/><circle cx="7" cy="4.5" r=".6" fill="currentColor" stroke="none"/><g class="washer-drum"><circle cx="12" cy="14" r="5"/><path d="M7.5 14c1.5 2 3 2 4.5 0s3-2 4.5 0"/></g></svg></button><span class="sr-only" id="style-wash-help">Kliknięcia na zmianę losują alternatywny styl i przywracają oryginalny. Przytrzymaj przycisk lub kliknij z klawiszem Shift, aby przywrócić styl podstawowy.</span><span class="sr-only style-wash-status" role="status" aria-live="polite"></span><a class="language-toggle" href="../en/polityka-prywatnosci/?lang=en" lang="en" hreflang="en" aria-label="Przełącz na angielski">EN</a></div>
+</header>
+<main id="main" class="story-page privacy-page">
+<a class="text-link" href="../"><svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M20 12H4M11 5l-7 7 7 7"/></svg> Strona główna</a>
+<h1>Polityka prywatności</h1>
+<p class="story-page-lead">Ostatnia aktualizacja: 8 listopada 2026 r.</p>
+<article class="story-prose">
+<section>
+<h2>Administrator i kontakt</h2>
+<p>Administratorem danych jest Mateusz Zguda, prowadzący stronę zguda.com. W sprawach prywatności skorzystaj z <a href="../#kontakt">danych kontaktowych na stronie</a>.</p>
+</section>
+<section>
+<h2>Analityka</h2>
+<p>Strona korzysta z Google Analytics 4, dostarczanego przez Google Ireland Limited. Analizuję odwiedzane publiczne strony, źródła wejść oraz informacje o przeglądarce, urządzeniu i przybliżonej lokalizacji, aby rozwijać stronę. Pomiar korzysta z identyfikatorów cookie i danych technicznych połączenia. Według Google adresy IP w GA4 służą ustaleniu lokalizacji i nie są zapisywane w pełnej postaci.</p>
+<p>Cookies _ga i _ga_787SY0YXF7 mają ustawiony okres ważności 180 dni. Google Signals i personalizacja reklam są wyłączone. Do pomiaru odsłon przekazuję adresy bez parametrów i fragmentów.</p>
+</section>
+<section data-analytics-preferences>
+<h2>Twój wybór</h2>
+<p>Analityka jest domyślnie włączona. Możesz ją wyłączyć tutaj. Twój wybór zapamiętam na 180 dni.</p>
+<p><label for="analytics-enabled"><input type="checkbox" id="analytics-enabled" checked disabled> Analityka strony</label></p>
+<p id="analytics-preference-status" role="status" aria-live="polite"></p><noscript>Analityka nie działa, gdy JavaScript jest wyłączony.</noscript>
+</section>
+<section>
+<h2>Ustawienia przeglądarki</h2>
+<p>Strona zapamiętuje w przeglądarce wybrany język, a w obrębie jednej karty także wariant wyglądu z pralki. Możesz usuwać cookies i dane strony w ustawieniach przeglądarki.</p>
+</section>
+<section>
+<h2>Hosting, fonty i odbiorcy danych</h2>
+<p>Strona jest udostępniana przez GitHub Pages, a fonty przez Google Fonts. Dostawcy otrzymują dane techniczne potrzebne do obsługi żądań, w tym adres IP. Dane mogą być przetwarzane poza Europejskim Obszarem Gospodarczym, zgodnie z mechanizmami transferu stosowanymi przez dostawców.</p>
+<p>Więcej informacji: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">polityka prywatności Google</a> oraz <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">oświadczenie o prywatności GitHub</a>.</p>
+</section>
+<section>
+<h2>Kontakt i Twoje prawa</h2>
+<p>Na stronie nie ma formularza kontaktowego. Jeśli piszesz e-mailem lub przez LinkedIn, dane z korespondencji są przetwarzane w związku z jej obsługą; zewnętrzne serwisy stosują własne zasady prywatności.</p>
+<p>Możesz żądać dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania oraz wnieść sprzeciw. Zakres tych uprawnień zależy od podstawy i celu przetwarzania. Przysługuje Ci również prawo złożenia skargi do <a href="https://uodo.gov.pl/" target="_blank" rel="noopener noreferrer">Prezesa Urzędu Ochrony Danych Osobowych</a>.</p>
+</section>
+</article>
+</main>
+<footer><a class="wordmark site-wordmark" href="../" aria-label="Mateusz Zguda — strona główna"><img src="../logo_zguda.png" alt="Zguda" width="1672" height="941" decoding="async"></a><div class="footer-links"><a class="easter-link" href="../nofollow/" rel="nofollow" aria-label="Odkryj sekret" data-egg-state="hidden"></a><a href="../#historie">Wszystkie historie <svg class="link-arrow" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"/></svg></a><a class="privacy-link" href="../polityka-prywatnosci/">Polityka prywatności</a></div></footer>
+<script type="module" src="../src/navigation.js"></script>
+</body></html>

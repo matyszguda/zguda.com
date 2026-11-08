@@ -8,6 +8,7 @@ const pages = [
   { key: 'zero', path: 'historie/zero-camps/index.html', route: 'historie/zero-camps/' },
   { key: 'cieplo', path: 'historie/cieplo/index.html', route: 'historie/cieplo/' },
   { key: 'motto', path: 'historie/w-dzialaniu/index.html', route: 'historie/w-dzialaniu/' },
+  { key: 'privacy', path: 'polityka-prywatnosci/index.html', route: 'polityka-prywatnosci/' },
   { key: 'backlog', path: 'nofollow/index.html', route: 'nofollow/' },
 ];
 const bootstrap = (await readFile(new URL('src/language-bootstrap.js', root), 'utf8')).trim();

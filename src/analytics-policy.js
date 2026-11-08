@@ -1,18 +1,23 @@
-export const CONSENT_KEY = 'zguda-analytics-consent';
-export const CONSENT_LIFETIME = 180 * 24 * 60 * 60 * 1000;
+// Reuse the existing key and record format to preserve earlier opt-outs.
+export const PREFERENCE_KEY = 'zguda-analytics-consent';
+export const PREFERENCE_LIFETIME = 180 * 24 * 60 * 60 * 1000;
 
-export function parseConsent(value, now = Date.now()) {
+export function parseAnalyticsPreference(value, now = Date.now()) {
   try {
     const record = JSON.parse(value);
     if (record?.version !== 1 || !['granted', 'denied'].includes(record.choice)) return null;
-    if (!Number.isFinite(record.updatedAt) || record.updatedAt > now || now - record.updatedAt >= CONSENT_LIFETIME) return null;
-    return record.choice;
+    if (!Number.isFinite(record.updatedAt) || record.updatedAt > now || now - record.updatedAt >= PREFERENCE_LIFETIME) return null;
+    return record.choice === 'granted';
   } catch { return null; }
 }
 
-export function consentRecord(choice, now = Date.now()) {
-  if (!['granted', 'denied'].includes(choice)) throw new Error('Invalid analytics choice');
-  return JSON.stringify({ version: 1, choice, updatedAt: now });
+export function analyticsPreferenceRecord(enabled, now = Date.now()) {
+  if (typeof enabled !== 'boolean') throw new Error('Invalid analytics preference');
+  return JSON.stringify({ version: 1, choice: enabled ? 'granted' : 'denied', updatedAt: now });
+}
+
+export function analyticsEnabled(value, now = Date.now()) {
+  return parseAnalyticsPreference(value, now) !== false;
 }
 
 export function isSecretPath(pathname) {
