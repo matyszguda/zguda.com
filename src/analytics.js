@@ -60,15 +60,19 @@ if (eligible) {
       ad_user_data: 'denied',
       ad_personalization: 'denied',
     });
-    window.gtag('js', new Date());
-    window.gtag('config', measurementId, {
+    const settings = {
       ...pageContext(),
       send_page_view: false,
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
       cookie_expires: 180 * 24 * 60 * 60,
       cookie_flags: 'SameSite=Lax;Secure',
-    });
+    };
+    // A published Google tag can configure its destination on 'js'. Apply
+    // privacy settings and suppress implicit page views before it initializes.
+    window.gtag('set', { ...settings });
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, { ...settings });
     pageView();
     const script = document.createElement('script');
     script.async = true;
